@@ -1,0 +1,42 @@
+alias als="vim ~/.zsh_aliases"
+alias s="sudo"
+alias resconf="source ~/.zshrc" 
+
+alias df="df -h"
+
+alias clrpac="sudo rm -f /var/lib/pacman/sync/* && sudo yaourt -Syu"
+
+# -- GIT --
+alias gs="git status"
+alias gp="git pull"
+alias gcm="git commit -m"
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias glp="gl -p" # show diffs
+alias glg1="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias glg2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+
+
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias grs="git reset --soft"
+alias grsp="git reset --soft HEAD^"
+alias grh="git reset --hard"
+
+
+alias grb="git rebase"
+alias grbi="git rebase -i"
+alias grbc="git rebase --continue"
+alias grba="git rebase --abort"
+alias h10="HEAD~10"
+
+# -- END GIT --
+
+alias h="history | grep "
+
+alias gse="grunt serve"
+alias gte="grunt test"
+alias v="vim"
+
+alias ni="npm install"
+alias nig="npm install -g"
+
