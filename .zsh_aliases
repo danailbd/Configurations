@@ -1,4 +1,6 @@
-alias als="vim ~/.zsh_aliases"
+SCRIPT=`realpath $0`
+alias als="vim $SCRIPT"
+alias chkals="pygmentize -g $SCRIPT|grep "
 alias s="sudo"
 alias resconf="source ~/.zshrc" 
 
@@ -7,10 +9,25 @@ alias df="df -h"
 alias clrpac="sudo rm -f /var/lib/pacman/sync/* && sudo yaourt -Syu"
 
 # -- GIT --
+alias gst="git stash"
+alias gsta="git stash apply"
 alias gs="git status"
 alias gp="git pull"
+alias gpr="git pull --rebase"
+alias gpu="git push"
+# create remote branch
+alias gpur="git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`"
 alias gcm="git commit -m"
+alias gca="git commit --amend"
+alias gdp="git diff master@{1} master"
+
+alias gcoc="gco stash@{0} -- src/rest/scripts/config.js"
+
+alias gb="git branch"
+alias gbD="git branch -D"
+
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias glm="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit origin/master..HEAD"
 alias glp="gl -p" # show diffs
 alias glg1="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias glg2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
@@ -21,7 +38,10 @@ alias gcob="git checkout -b"
 alias grs="git reset --soft"
 alias grsp="git reset --soft HEAD^"
 alias grh="git reset --hard"
+alias grhH="git reset --hard HEAD"
 
+alias gme="git merge"
+alias gmes="git merge --squash"
 
 alias grb="git rebase"
 alias grbi="git rebase -i"
@@ -33,6 +53,7 @@ alias h10="HEAD~10"
 
 alias h="history | grep "
 
+alias gbd="grunt build:dist"
 alias gse="grunt serve"
 alias gte="grunt test"
 alias v="vim"
