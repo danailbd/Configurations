@@ -1,0 +1,95 @@
+<application>
+  <component name="StatisticsApplicationUsages">
+    <group name="javaScript Scope Usages">
+      <project id="Intellogo" values="Project,Directory,Project,Directory,Project" collectionTime="1454848703039" />
+      <project id="skype.desktop" values="Project,Project" collectionTime="1429607522813" />
+      <project id="sharedlib" values="Project,Project,Directory" collectionTime="1436253670623" />
+    </group>
+    <group name="JavaScript versions">
+      <project id="Intellogo" values="ECMAScript 6" collectionTime="1454848703039" />
+      <project id="skype.desktop" values="DEFAULT" collectionTime="1429607522813" />
+      <project id="sharedlib" values="DEFAULT" collectionTime="1436253670623" />
+    </group>
+    <group name="module type">
+      <project id="Intellogo" values="JAVA_MODULE,WEB_MODULE" collectionTime="1454848703027" />
+    </group>
+    <group name="vcs">
+      <project id="Intellogo" values="Git" collectionTime="1454848703027" />
+      <project id="sharedlib" values="Git" collectionTime="1436253669551" />
+    </group>
+    <group name="run-configuration-type">
+      <project id="Intellogo" values="js.build_tools.grunt,NodeJSConfigurationType" collectionTime="1454848703028" />
+    </group>
+    <group name="run-configuration-type-temp">
+      <project id="Intellogo" values="NodeJSConfigurationType" collectionTime="1454848703028" />
+    </group>
+    <group name="file-type">
+      <project id="Intellogo" values="XML,SourceMap,PLAIN_TEXT,CoffeeScript,UNKNOWN,JSHint,Bash,C++,CSS,JSCS,JavaScript,Images,YAML,Less,SWF,Python,IDEA_MODULE,HTML,JSON,SCSS" collectionTime="1454848703039" />
+      <project id="skype.desktop" values="UNKNOWN" collectionTime="1429607519151" />
+      <project id="sharedlib" values="UNKNOWN" collectionTime="1436253669681" />
+    </group>
+    <group name="VCS Log">
+      <project id="Intellogo" values="vcs.log.git.root.count=15,vcs.log.commit.count=5470" collectionTime="1450794556678" />
+    </group>
+    <group name="javaScript Frameworks">
+      <project id="Intellogo" values="node_modules" collectionTime="1454848703039" />
+      <project id="sharedlib" values="node_modules" collectionTime="1436253670623" />
+    </group>
+    <group name="Git">
+      <project id="Intellogo" values="data.remote.branches.count.30+,config.cherry-pick.autocommit.disabled,config.repo.sync.DONT_SYNC,data.local.branches.count.2+,data.remotes.in.project.1,data.remote.branches.count.0,data.remote.branches.count.5+,config.push.autoupdate.disabled,config.warn.about.crlf.enabled,config.ssh.enabled,data.remotes.in.project.1,config.warn.about.detached.enabled,data.local.branches.count.2+,data.remote.branches.count.5+,config.force.push.enabled,data.remote.branches.count.8+,data.remotes.in.project.1,config.push.update.all.roots.enabled,data.local.branches.count.15+,data.local.branches.count.1,data.remote.branches.count.1,config.save.policy.STASH,data.remotes.in.project.1,config.update.type.BRANCH_DEFAULT,data.remotes.in.project.1,data.remotes.in.project.1,data.remote.branches.count.30+,data.local.branches.count.5+,data.local.branches.count.1,data.local.branches.count.8+,data.remotes.in.project.1" collectionTime="1454848703039" />
+    </group>
+    <group name="libraries">
+      <project id="Intellogo" values="javaScript" collectionTime="1454848703039" />
+    </group>
+    <group name="frameworks">
+      <project id="Intellogo" values="Python" collectionTime="1454848703027" />
+    </group>
+    <group name="language-level">
+      <project id="Intellogo" values="JDK_1_6" collectionTime="1454848703039" />
+      <project id="skype.desktop" values="JDK_1_6" collectionTime="1429607519232" />
+      <project id="sharedlib" values="JDK_1_6" collectionTime="1436253669732" />
+    </group>
+  </component>
+  <component name="UsageTrigger">
+    <counts>
+      <entry feature="CreateFile.CreateFileAction" count="3" />
+      <entry feature="JSDebugConfig.Debug.browser-default.preferredEngine-null.no_mappings" count="1" />
+      <entry feature="OpenInBrowser.Chrome" count="2" />
+      <entry feature="execute.ChromiumRemoteDebugType.Debug" count="1" />
+      <entry feature="execute.FirefoxRemoteDebugType.Debug" count="2" />
+      <entry feature="execute.JavascriptDebugType.Debug" count="1" />
+      <entry feature="execute.NodeJSConfigurationType.Debug" count="1609" />
+      <entry feature="execute.NodeJSConfigurationType.Run" count="964" />
+      <entry feature="execute.js.build_tools.grunt.Debug" count="8" />
+      <entry feature="execute.js.build_tools.grunt.Run" count="181" />
+      <entry feature="execute.js.build_tools.npm.Run" count="1" />
+      <entry feature="ide.help.ideaInterface.editor" count="11" />
+      <entry feature="ide.help.ideaInterface.run" count="1" />
+      <entry feature="ide.help.reference.dialogs.diff.file" count="1" />
+      <entry feature="ide.help.reference.dialogs.rundebug.NodeJSConfigurationType" count="1" />
+      <entry feature="ide.help.top" count="1" />
+      <entry feature="ide.settings.Appearance" count="28" />
+      <entry feature="ide.settings.Code_Style" count="3" />
+      <entry feature="ide.settings.Colors_&amp;_Fonts" count="18" />
+      <entry feature="ide.settings.Font" count="1" />
+      <entry feature="ide.settings.General" count="1" />
+      <entry feature="ide.settings.Inspections" count="2" />
+      <entry feature="ide.settings.JSHint" count="1" />
+      <entry feature="ide.settings.JavaScript" count="3" />
+      <entry feature="ide.settings.Keymap" count="17" />
+      <entry feature="ide.settings.Node.js_and_NPM" count="1" />
+      <entry feature="ide.settings.Plugins" count="1" />
+      <entry feature="ide.settings.Project_Structure" count="1" />
+      <entry feature="ide.settings.Updates" count="1" />
+      <entry feature="ide.settings.Version_Control" count="1" />
+      <entry feature="ide.settings.Vim_Emulation" count="1" />
+      <entry feature="ideaapp.started" count="116" />
+      <entry feature="terminal.linux" count="2" />
+      <entry feature="welcome.screen.WelcomeScreen.Configure" count="5" />
+      <entry feature="welcome.screen.WelcomeScreen.CreateNewProject" count="2" />
+      <entry feature="welcome.screen.WelcomeScreen.ImportProject" count="1" />
+      <entry feature="welcome.screen.WelcomeScreen.Settings" count="1" />
+      <entry feature="welcome.screen.null" count="1" />
+    </counts>
+  </component>
+</application>
