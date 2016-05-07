@@ -1,8 +1,24 @@
+# TEMP
+WORK='~/workspace/work/'
+UNI='~/workspace/uni/'
+alias cdw="cd $WORK"
+alias cdu="cd $UNI"
+
+alias cdwb="cd $WORK/nodejs/brainhub/"
+alias cdwi="cd $WORK/nodejs/Intellogo/"
+
+alias ipy="ipython3"
+alias py="python3"
+
+
 SCRIPT=`realpath $0`
 alias als="vim $SCRIPT"
+alias vrc="vim ~/.vimrc"
+alias vsnip="cd ~/.vim/bundle/vim-snippets/snippets/javascript; vim"
+
 alias chkals="pygmentize -g $SCRIPT|grep "
 alias s="sudo"
-alias resconf="source ~/.zshrc" 
+alias resconf="source ~/.zshrc; echo 'Config reloaded'" 
 
 alias df="df -h"
 
