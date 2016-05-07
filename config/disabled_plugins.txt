@@ -1,2 +1,0 @@
-AntSupport
-com.jetbrains.plugins.asp
