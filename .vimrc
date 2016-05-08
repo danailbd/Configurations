@@ -284,9 +284,6 @@ let g:PyFlakeOnWrite = 1
 let g:PyFlakeForceVersion = 3
 let g:PyFlakeCWindow = 0
 
-let g:indentLine_enabled = 0
-" Vim
- let g:indentLine_color_term = 239
  let g:NERDTreeIndicatorMapCustom = {
      \ "Modified"  : "✹",
      \ "Staged"    : "✚",
@@ -299,6 +296,18 @@ let g:indentLine_enabled = 0
      \ "Unknown"   : "?"
      \}
 
+let g:javascript_conceal_function       = "ƒ"
+let g:javascript_conceal_null           = "ø"
+let g:javascript_conceal_this           = "@"
+let g:javascript_conceal_return         = "⇚"
+let g:javascript_conceal_undefined      = "¿"
+let g:javascript_conceal_NaN            = "ℕ"
+let g:javascript_conceal_prototype      = "¶"
+let g:javascript_conceal_static         = "•"
+let g:javascript_conceal_super          = "Ω"
+let g:javascript_conceal_arrow_function = "⇒"
+
+
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-space>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
@@ -308,14 +317,19 @@ let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetsDir="~/.vim/bundle/vim-snippets/UltiSnips"
 
-"
+
+""""""""""""""""
+"  IndentLine  "
+""""""""""""""""
+
 " "GVim
  let g:indentLine_color_gui = '#A4E57E'
-
 " " none X terminal
  let g:indentLine_color_tty_light = 7 " (default: 4)
  let g:indentLine_color_dark = 1 " (default: 2)
  let g:indentLine_char = '¦'
+ let g:indentLine_enabled = 1
+ let g:indentLine_color_term = 239
 
 let python_highlight_all=1
 syntax on
@@ -323,6 +337,16 @@ syntax on
 let g:ctrlp_custom_ignore='\v[\/](\.git|\.hg|\.svn|node_modules)$'
 
 let g:SimpylFold_docstring_preview=1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                  AUTORUNS                                  "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""
+"  load temple on filetype  "
+"""""""""""""""""""""""""""""
+
+au BufNewFile *.js 0r ~/.vim/js.skel | let IndentStyle = "js"
+
 
 " Load local config
 if (filereadable(".vimrc.local"))
