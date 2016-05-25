@@ -1,6 +1,7 @@
 # TEMP
 WORK='~/workspace/work/'
 UNI='~/workspace/uni/'
+CONFIG_HOME="~/Programs/Configurations/"
 alias cdw="cd $WORK"
 alias cdu="cd $UNI"
 
@@ -21,8 +22,6 @@ alias du="du -h"
 
 alias clrpac="sudo rm -f /var/lib/pacman/sync/* && sudo yaourt -Syu"
 
-# -- END GIT --
-
 alias h="history | grep "
 
 alias gbd="grunt build:dist"
@@ -35,6 +34,8 @@ alias v="vim"
 #########
 alias gi="git init"
 alias gs="git status"
+alias gst="git stash"
+alias gsta="git stash apply"
 alias gd="git diff"
 alias gdh="git diff HEAD"
 alias gc="git clone $1 $2"
@@ -112,9 +113,9 @@ alias i3conf="vim ~/.i3/config"
 alias tmuxconf="vim ~/.tmux.conf"
 alias xres="vim ~/.Xresources && xrdb ~/.Xresources"
 alias vrc="vim ~/.vimrc"
-alias als="vim $SCRIPT"
+alias als="vim $SCRIPT && source ~/.zshrc"
 
-alias update.="gaa && gcm 'Update dotfiles' && gpo master"
+alias update.="cd $CONFIG_HOME && gaa && gcm 'Update dotfiles' && gpo master"
 
 # Man
 #alias h='tldr'
