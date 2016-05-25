@@ -90,7 +90,7 @@ source $ZSH/oh-my-zsh.sh
 alias zshconf="vim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source ~/.zsh_aliases
+source ~/.aliases
 source ~/.zsh_scripts
 
 # user exports 

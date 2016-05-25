@@ -10,44 +10,58 @@ alias cdwi="cd $WORK/nodejs/Intellogo/"
 alias ipy="ipython3"
 alias py="python3"
 
-
 SCRIPT=`realpath $0`
-alias als="vim $SCRIPT"
-alias vrc="vim ~/.vimrc"
 alias vsnip="cd ~/.vim/bundle/vim-snippets/snippets/javascript; vim"
 
 alias chkals="pygmentize -g $SCRIPT|grep "
 alias s="sudo"
-alias resconf="source ~/.zshrc; echo 'Config reloaded'" 
 
 alias df="df -h"
+alias du="du -h"
 
 alias clrpac="sudo rm -f /var/lib/pacman/sync/* && sudo yaourt -Syu"
 
-# -- GIT --
-alias gst="git stash"
-alias gsta="git stash apply"
+# -- END GIT --
+
+alias h="history | grep "
+
+alias gbd="grunt build:dist"
+alias gse="grunt serve"
+alias gte="grunt test"
+alias v="vim"
+
+#########
+#  Git  #
+#########
+alias gi="git init"
 alias gs="git status"
+alias gd="git diff"
+alias gdh="git diff HEAD"
+alias gc="git clone $1 $2"
+alias gcm="git commit -m "$1""
+alias gaa="git add -A ."
+alias ga="git add $1"
 alias gp="git pull"
 alias gpr="git pull --rebase"
 alias gpu="git push"
-# create remote branch
-alias gpur="git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`"
-alias gcm="git commit -m"
+alias gpo="git push origin $1"
 alias gca="git commit --amend"
 alias gdp="git diff master@{1} master"
+
+alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias glm="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit origin/master..HEAD"
+alias glp="gl -p" # show diffs
+alias glg1="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias glg2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+alias glo="git log --oneline"
+
+alias grhh="git reset --hard HEAD"
+alias gcp="git cherry-pick $1"
 
 alias gcoc="gco stash@{0} -- src/rest/scripts/config.js"
 
 alias gb="git branch"
 alias gbD="git branch -D"
-
-alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias glm="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit origin/master..HEAD"
-alias glp="gl -p" # show diffs
-alias glg1="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
-alias glg2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
-
 
 alias gco="git checkout"
 alias gcob="git checkout -b"
@@ -65,15 +79,42 @@ alias grbc="git rebase --continue"
 alias grba="git rebase --abort"
 alias h10="HEAD~10"
 
-# -- END GIT --
 
-alias h="history | grep "
+# npm
+alias ni="npm install";
+alias nis="npm i -S "
+alias nid="npm i -D "
+alias nig="npm i -g "
+alias nr="npm run $1";
+alias nrs="npm run start";
+alias nrb="npm run build";
+alias nrt="npm run test";
+alias nrc="npm run commit";
 
-alias gbd="grunt build:dist"
-alias gse="grunt serve"
-alias gte="grunt test"
-alias v="vim"
+# Clipboard
+alias setclip='xclip -selection c'
+alias getclip='xclip -selection clipboard -o'
 
-alias ni="npm install"
-alias nig="npm install -g"
+# Arch
+alias ya="yaourt  --nameonly --pager --color --noconfirm $1"
 
+# Files
+alias l="ls -o -hX --group-directories-first"
+alias la="ls -o -AhX --group-directories-first"
+alias j="jump"
+alias v='vim'
+
+# Config
+alias termiteconf="vim ~/.config/termite/config"
+alias zshrc="vim ~/.zshrc && source ~/.zshrc"
+alias vinit="cd ~/Code/dotfiles/.config/vim && v init.vim"
+alias i3conf="vim ~/.i3/config"
+alias tmuxconf="vim ~/.tmux.conf"
+alias xres="vim ~/.Xresources && xrdb ~/.Xresources"
+alias vrc="vim ~/.vimrc"
+alias als="vim $SCRIPT"
+
+alias update.="gaa && gcm 'Update dotfiles' && gpo master"
+
+# Man
+#alias h='tldr'

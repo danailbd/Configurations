@@ -1,0 +1,117 @@
+! General
+!urxvt*termName:  rxvt-256color
+!urxvt*loginShell:         true
+!urxvt*secondaryScroll:    true
+!urxvt*saveLines:         65535
+!urxvt*cursorBlink:       false
+!urxvt*urgentOnBell:       true
+!urxvt*override-redirect:false
+!urxvt*borderLess:       false
+!urxvt*internalBorder:       0
+!urxvt*externalBorder:       0
+
+! Extensions
+urxvt*perl-lib:        /usr/lib/urxvt/perl/
+urxvt*matcher.button:  1
+!URxvt.perl-ext-common: selection-to-clipboard
+!  - catch ugly URLs
+!!urxvt.cutchars:        `()'*<>[]{|}"
+
+! Appearance
+!  - use a bitmap font
+!urxvt*font:        -xos4-terminus-medium-*-*-*-18-*-*-*-*-*-*-*
+!urxvt*boldFont:    -xos4-terminus-bold-*-*-*-18-*-*-*-*-*-*-*
+!  - use xft for drawing fonts
+!!urxvt*font:       xft:Source Code Pro:24
+!!urxvt*boldFont:       xft:Source Code Pro Bold:24
+!  - cursor
+urxvt*cursorColor: #DCDCCC
+!  - pseudo transparency
+!urxvt*shading:    50
+!urxvt*transparent:true
+!
+
+Xcursor.theme: DMZ-White
+
+URxvt.font:                xft:Source Code Pro:pixelsize=26
+URxvt.boldFont:            xft:Source Code Pro:pixelsize=26:bold
+URxvt.italicFont:          xft:Source Code Pro:pixelsize=26:italic
+URxvt.boldItalicFont:      xft:Source Code Pro:pixelsize=26:bold:italic
+URxvt.letterSpace:         -1
+
+Xft.antialias: 1
+Xft.autohint: 0
+Xft.dpi: 120
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
+
+*background: #232C31
+*foreground: #C5C8C6
+! black
+*color0: #2D3C46
+*color8: #425059
+! red
+*color1: #A54242
+*color9: #CC6666
+! green
+*color2: #8C9440
+*color10: #B5BD68
+! yellow
+*color3: #DE935F
+*color11: #F0C674
+! blue
+*color4: #5F819D
+*color12: #81A2BE
+! magenta
+*color5: #85678F
+*color13: #B294BB
+! cyan
+*color6: #5E8D87
+*color14: #8ABEB7
+! white
+*color7: #6C7A80
+*color15: #C5C8C6
+
+URxvt.internalBorder:      0
+URxvt.externalBorder:      0
+
+URxvt.scrollBar:           false
+
+URxvt*fading:              30
+
+URxvt.perl-ext-common:     default,fullscreen,matcher,tabbedex,font-size
+
+URxvt.keysym.C-Up:     font-size:increase
+URxvt.keysym.C-Down:   font-size:decrease
+URxvt.keysym.C-S-Up:   font-size:incglobal
+URxvt.keysym.C-S-Down: font-size:decglobal
+
+URxvt.keysym.F11:          perl:fullscreen:switch
+
+URxvt.url-launcher:        /usr/bin/chromium
+URxvt.keysym.M-Delete:     perl:matcher:list
+URxvt.colorUL:             #7780a1
+
+!Tab control
+URxvt.keysym.M-t: perl:tabbedex:new_tab
+URxvt.keysym.M-j: perl:tabbedex:next_tab
+URxvt.keysym.M-k: perl:tabbedex:prev_tab
+
+! Tabbedex features
+URxvt.tabbed.new-button:       no
+URxvt.tabbed.autohide:         yes
+URxvt.tabbed.no-tabbedex-keys: yes
+
+! Tabbedex colors
+URxvt.tabbed.tabbar-fg:   244
+URxvt.tabbed.tabbar-bg:   16
+URxvt.tabbed.tab-fg:      255
+URxvt.tabbed.tab-bg:      52
+URxvt.tabbed.bell-tab-fg: 255
+URxvt.tabbed.bell-tab-bg: 160
+URxvt.tabbed.bell-fg:     244
+URxvt.tabbed.bell-bg:     17
+URxvt.tabbed.title-fg:    28
+URxvt.tabbed.title-bg:    16

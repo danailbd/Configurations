@@ -133,8 +133,8 @@ NC='\e[0m' # No Color
     # ~/.bash_aliases, instead of adding them here directly.
     # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-    if [ -f ~/.bash_aliases ]; then
-        . ~/.bash_aliases
+    if [ -f ~/.aliases ]; then
+        . ~/.aliases
     fi
 
     # enable color support of ls and also add handy aliases
