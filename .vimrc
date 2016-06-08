@@ -15,6 +15,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
+Plugin 'scrooloose/nerdcommenter'
+
 "Plugin 'Shougo/unite.vim'
 "Plugin 'reedes/vim-thematic'
 "Plugin 'adimit/prolog.vim'
