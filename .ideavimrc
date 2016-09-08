@@ -1,0 +1,16 @@
+imap jk <ESC>
+set surround
+
+set incsearch
+set hlsearch
+set ignorecase
+" set smartcase
+
+set relativenumber
+set number
+
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+
+:au FocusLost * :set number
+:au FocusGained * :set relativenumber

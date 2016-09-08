@@ -41,6 +41,10 @@ fi
 #  ln -sfn ${dir}/.config/termite ${HOME}/.config/termite
 #fi
 
+if ask "Install symlink for .ideavimrc?" Y; then
+  ln -sfn ${dir}/.ideavimrc ${HOME}/.ideavimrc
+fi
+
 if ask "Install symlink for .vimrc?" Y; then
   ln -sfn ${dir}/.vimrc ${HOME}/.vimrc
 fi
