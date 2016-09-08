@@ -81,7 +81,7 @@ URxvt.scrollBar:           false
 
 URxvt*fading:              30
 
-URxvt.perl-ext-common:     default,fullscreen,matcher,tabbedex,font-size
+URxvt.perl-ext-common:     default,fullscreen,matcher,tabbedex,font-size,keyboard-select
 
 URxvt.keysym.C-Up:     font-size:increase
 URxvt.keysym.C-Down:   font-size:decrease
@@ -98,6 +98,10 @@ URxvt.colorUL:             #7780a1
 URxvt.keysym.M-t: perl:tabbedex:new_tab
 URxvt.keysym.M-j: perl:tabbedex:next_tab
 URxvt.keysym.M-k: perl:tabbedex:prev_tab
+
+! keyboard-select
+URxvt.keysym.M-j: perl:keyboard-select:activate
+URxvt.keysym.M-r: perl:keyboard-select:search
 
 ! Tabbedex features
 URxvt.tabbed.new-button:       no

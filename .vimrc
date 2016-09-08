@@ -15,6 +15,10 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 
+""""""""""
+"  Some  "
+""""""""""
+Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'scrooloose/nerdcommenter'
 
 "Plugin 'Shougo/unite.vim'
@@ -104,6 +108,8 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
+set cursorline
+" set cursorcolumn
 " " Set automatic indentation
 set autoindent
 set smartindent
@@ -302,6 +308,9 @@ set guioptions-=T
 set foldmethod=indent
 set foldlevel=99
 
+" SOME "
+let vim_markdown_preview_hotkey='<C-m>'
+
 " PYTHON "
 let g:PyFlakeOnWrite = 1
 let g:PyFlakeForceVersion = 3
@@ -329,6 +338,9 @@ let g:javascript_conceal_prototype      = "¶"
 let g:javascript_conceal_static         = "•"
 let g:javascript_conceal_super          = "Ω"
 let g:javascript_conceal_arrow_function = "⇒"
+
+" Python version to use
+let g:UltiSnipsUsePythonVersion = 3
 
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.

@@ -10,7 +10,7 @@ alias ipy="ipython3"
 alias py="python3"
 
 SCRIPT=`realpath $0`
-alias vsnip="cd ~/.vim/bundle/vim-snippets/snippets/javascript; vim"
+alias vsnip="cd ~/.vim/bundle/vim-snippets/UltiSnips/; vim"
 
 alias chkals="pygmentize -g $SCRIPT|grep "
 alias s="sudo"
@@ -124,3 +124,5 @@ alias update.="cd $CONFIG_HOME && gaa && gcm 'Update dotfiles' && gpo master"
 
 # Man
 #alias h='tldr'
+# Useful commands
+# fuser - find process on port (fuser 8080/tcp)
