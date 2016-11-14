@@ -1,3 +1,23 @@
+# Functions
+runNtimes () {
+    errs=0
+    err_file="err-$errs.out"
+    for run in {1..$1}
+    do
+        (eval $2) &> $err_file
+        test $? -gt 0 && errs=$(($errs+1))
+        echo $errs
+        err_file="err-$errs.out"
+    done
+    echo --- RESULT ----
+    echo Errors: $errs
+}
+
+# kill by grep
+pgkl () { 
+    ps aux| grep "$1" | tr -s ' '| cut -f 2 -d ' '| xargs -I '{}' kill -9 {}
+}
+
 # TEMP
 local_config="$HOME/.aliases_local.sh"
 if [ -f "$local_config" ]
@@ -14,6 +34,8 @@ alias vsnip="cd ~/.vim/bundle/vim-snippets/UltiSnips/; vim"
 
 alias chkals="pygmentize -g $SCRIPT|grep "
 alias s="sudo"
+
+alias wh="which"
 
 alias df="df -h"
 alias du="du -h"
@@ -36,6 +58,7 @@ alias v="vim"
 #########
 alias gi="git init"
 alias gs="git status"
+alias gsu="git status -uno"
 alias gst="git stash"
 alias gsta="git stash apply"
 alias gd="git diff"
@@ -49,7 +72,7 @@ alias ga="git add -u $1" #only update
 alias gp="git pull"
 alias gpr="git pull --rebase"
 alias gpu="git push"
-alias gpur="`gpu 2>&1 |tail -n2`" #some magic
+alias gpur='`gpu 2>&1 |tail -n2`' #some magic
 alias gpo="git push origin $1"
 alias gca="git commit --amend"
 alias gdp="git diff master@{1} master"
@@ -68,6 +91,7 @@ alias gcoc="gco stash@{0} -- src/rest/scripts/config.js"
 
 alias gb="git branch"
 alias gbD="git branch -D"
+alias gbcllm="git branch --merged | grep -v '\*\|master\|develop' | xargs -n 1 git branch -d" #clean local -> merged
 
 alias gco="git checkout"
 alias gcob="git checkout -b"
@@ -120,7 +144,7 @@ alias xres="vim ~/.Xresources && xrdb ~/.Xresources"
 alias vrc="vim ~/.vimrc"
 alias als="vim $SCRIPT && source ~/.zshrc"
 
-alias update.="cd $CONFIG_HOME && gaa && gcm 'Update dotfiles' && gpo master"
+alias update.="cd $CONFIG_HOME && gaa -u && gcm 'Update dotfiles' && gpo master"
 
 # Man
 #alias h='tldr'
