@@ -85,23 +85,23 @@
     <location key="findTextDialog.0.0.1920.1200@168dpi" x="646" y="135" />
     <location key="replaceTextDialog.0.0.1920.1200@168dpi" x="639" y="71" />
     <location key="ReplaceDuplicatesPrompt.0.0.1920.1200@168dpi" x="36" y="507" />
-    <location key="SettingsEditor.0.0.1920.1200@144dpi" x="78" y="22" />
+    <location key="SettingsEditor.0.0.1920.1200@144dpi" x="235" y="75" />
     <location key="replaceTextDialog.0.0.1920.1200@144dpi" x="650" y="123" />
-    <location key="ReplaceDuplicatesPrompt.0.0.1920.1200@144dpi" x="36" y="507" />
+    <location key="ReplaceDuplicatesPrompt.0.0.1920.1200@144dpi" x="167" y="257" />
     <location key="RollbackChangesDialog.0.0.1920.1200@144dpi" x="673" y="292" />
-    <location key="CommitChangelistDialog2.0.0.1920.1200@144dpi" x="238" y="127" />
-    <location key="findTextDialog.0.0.1920.1200@144dpi" x="889" y="182" />
+    <location key="CommitChangelistDialog2.0.0.1920.1200@144dpi" x="358" y="112" />
+    <location key="findTextDialog.0.0.1920.1200@144dpi" x="348" y="2" />
     <location key="VCS.ChangeListViewerDialog.0.0.1920.1200@144dpi" x="527" y="273" />
     <location key="git4idea.ui.GitUnstashDialog.0.0.1920.1200@144dpi" x="104" y="350" />
     <location key="com.intellij.openapi.editor.actions.MultiplePasteAction$1.0.0.1920.1200@144dpi" x="718" y="49" />
     <location key="git4idea.history.wholeTree.VcsStructureChooser.0.0.1920.1200@144dpi" x="643" y="307" />
-    <location key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.1920.1200@144dpi" x="418" y="232" />
-    <location key="DiffContextDialog.0.0.1920.1200@144dpi" x="37" y="197" />
+    <location key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.1920.1200@144dpi" x="292" y="76" />
+    <location key="DiffContextDialog.0.0.1920.1200@144dpi" x="37" y="181" />
     <location key="MergeDialog.0.0.1920.1200@144dpi" x="0" y="0" />
     <location key="MultipleFileMergeDialog.0.0.1920.1200@144dpi" x="285" y="206" />
-    <location key="FileChooserDialogImpl.0.0.1920.1200@144dpi" x="643" y="232" />
+    <location key="FileChooserDialogImpl.0.0.1920.1200@144dpi" x="440" y="265" />
     <location key="git4idea.ui.GitStashDialog.0.0.1920.1200@144dpi" x="460" y="458" />
-    <location key="#com.intellij.debugger.actions.ViewTextAction.0.0.1920.1200@144dpi" x="718" y="382" />
+    <location key="#com.intellij.debugger.actions.ViewTextAction.0.0.1920.1200@144dpi" x="294" y="386" />
     <location key="FileDocumentManager.FileCacheConflict.0.0.1920.1200@144dpi" x="0" y="0" />
     <location key="#Browse_JetBrains_Plugins_.0.0.1920.1200@144dpi" x="543" y="233" />
     <location key="#Plugins.0.0.1920.1200@144dpi" x="510" y="234" />
@@ -124,6 +124,72 @@
     <location key="WELCOME_SCREEN.0.0.1280.1024@144dpi" x="639" y="345" />
     <location key="SettingsEditor.0.0.1280.1024@144dpi" x="0" y="8" />
     <location key="VCS.FileHistoryDialog.0.0.1920.1200@144dpi" x="208" y="120" />
+    <location key="VCS.ChangelistChooser.0.0.1920.1200@144dpi" x="778" y="387" />
+    <location key="#xdebugger.evaluate.0.0.1920.1200@144dpi" x="426" y="632" />
+    <location key="#profile-categories-updater-bin.js.0.0.1920.1200@144dpi" x="539" y="262" />
+    <location key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog.0.0.1920.1200@144dpi" x="565" y="218" />
+    <location key="#com.intellij.ide.actions.ChooseComponentsToExportDialog.0.0.1920.1200@144dpi" x="565" y="403" />
+    <location key="#com.intellij.fileTypes.FileTypeChooser.0.0.1920.1200@144dpi" x="507" y="349" />
+    <location key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.1920.1200@144dpi" x="553" y="428" />
+    <location key="ProcessPopupWindow.0.0.1920.1200@144dpi" x="264" y="1010" />
+    <location key="findTextDialog.1920.0.1280.1024@144dpi" x="357" y="208" />
+    <location key="CommitChangelistDialog2.1920.0.1280.1024@144dpi" x="1920" y="138" />
+    <location key="com.intellij.openapi.editor.actions.MultiplePasteAction$1.1920.0.1280.1024@144dpi" x="1920" y="0" />
+    <location key="jetbrains.nodejs.interpreters-dialog.0.0.1920.1200@144dpi" x="692" y="253" />
+    <location key="#com.intellij.execution.impl.EditConfigurationsDialog.1920.0.1280.1024@144dpi" x="2020" y="183" />
+    <location key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2.0.0.1920.1200@144dpi" x="156" y="190" />
+    <location key="new project wizard.0.0.1920.1200@144dpi" x="465" y="28" />
+    <location key="#epub-scraper.js.0.0.1920.1200@144dpi" x="537" y="333" />
+    <location key="#single-epub-ingestor-bin.js.0.0.1920.1200@144dpi" x="537" y="333" />
+    <location key="#epub-ingestor-bin.js.0.0.1920.1200@144dpi" x="537" y="333" />
+    <location key="#xdebugger.XInspectDialog.0.0.1920.1200@144dpi" x="0" y="442" />
+    <location key="DiffContextDialog.1920.0.1280.1024@144dpi" x="1920" y="29" />
+    <location key="Vcs.Push.Dialog.0.0.1920.1200@144dpi" x="266" y="171" />
+    <location key="#query-parser.0.0.1920.1200@144dpi" x="559" y="214" />
+    <location key="#Live_Templates.0.0.1920.1200@144dpi" x="569" y="0" />
+    <location key="#com.intellij.codeInsight.template.impl.EditVariableDialog.0.0.1920.1200@144dpi" x="875" y="387" />
+    <location key="#Inspections.0.0.1920.1200@144dpi" x="590" y="228" />
+    <location key="vcs.readOnlyHandler.ReadOnlyStatusDialog.0.0.1920.1200@144dpi" x="634" y="354" />
+    <location key="#Usage_Scope.0.0.1920.1200@144dpi" x="704" y="372" />
+    <location key="#com.intellij.ide.scriptingContext.ui.LibraryScopesDialog.0.0.1920.1200@144dpi" x="752" y="356" />
+    <location key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog.0.0.1920.1200@144dpi" x="467" y="261" />
+    <location key="git4idea.rebase.GitRebaseDialog.0.0.1920.1200@144dpi" x="564" y="353" />
+    <location key="Github.CreatePullRequestDialog.0.0.1920.1200@144dpi" x="543" y="417" />
+    <location key="#Unnamed.0.0.1920.1200@144dpi" x="564" y="314" />
+    <location key="#xdebugger.code.fragment.editor.0.0.1920.1200@144dpi" x="718" y="380" />
+    <location key="#server.js.0.0.1920.1200@144dpi" x="564" y="314" />
+    <location key="bookmarks.0.0.1920.1200@144dpi" x="401" y="318" />
+    <location key="findTextDialog.0.0.1200.1920@144dpi" x="0" y="0" />
+    <location key="CommitChangelistDialog2.0.0.1200.1920@144dpi" x="0" y="0" />
+    <location key="git4idea.history.wholeTree.VcsStructureChooser.0.0.1200.1920@144dpi" x="283" y="666" />
+    <location key="com.intellij.openapi.editor.actions.MultiplePasteAction$1.0.0.1200.1920@144dpi" x="358" y="362" />
+    <location key="MergeDialog.0.0.1200.1920@144dpi" x="0" y="0" />
+    <location key="MultipleFileMergeDialog.0.0.1200.1920@144dpi" x="126" y="347" />
+    <location key="#xdebugger.evaluate.0.0.1200.1920@144dpi" x="204" y="543" />
+    <location key="RollbackChangesDialog.0.0.1200.1920@144dpi" x="204" y="506" />
+    <location key="#Live_Templates.0.0.1200.1920@144dpi" x="222" y="378" />
+    <location key="SettingsEditor.0.0.1200.1920@144dpi" x="-186" y="408" />
+    <location key="DiffContextDialog.0.0.1200.1920@144dpi" x="0" y="435" />
+    <location key="FileChooserDialogImpl.0.0.1200.1920@144dpi" x="415" y="591" />
+    <location key="replaceTextDialog.0.0.1200.1920@144dpi" x="295" y="499" />
+    <location key="FileDocumentManager.FileCacheConflict.0.0.1200.1920@144dpi" x="1920" y="0" />
+    <location key="#xdebugger.code.fragment.editor.0.0.1200.1920@144dpi" x="358" y="741" />
+    <location key="refactoring.ChangeSignatureDialog.0.0.1200.1920@144dpi" x="331" y="552" />
+    <location key="DetectedRootsChooserDialog.0.0.1200.1920@144dpi" x="274" y="639" />
+    <location key="Vcs.Push.Dialog.0.0.1200.1920@144dpi" x="0" y="531" />
+    <location key="VCS.ChangelistChooser.0.0.1200.1920@144dpi" x="418" y="746" />
+    <location key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.1200.1920@144dpi" x="58" y="569" />
+    <location key="VCS.ChangeListViewerDialog.0.0.1200.1920@144dpi" x="291" y="502" />
+    <location key="ReplaceDuplicatesPrompt.0.0.1200.1920@144dpi" x="0" y="870" />
+    <location key="new project wizard.0.0.1200.1920@144dpi" x="136" y="366" />
+    <location key="NewModule_or_Project.wizard.0.0.1200.1920@144dpi" x="55" y="506" />
+    <location key="git4idea.ui.GitUnstashDialog.0.0.1200.1920@144dpi" x="1230" y="213" />
+    <location key="#Browse_JetBrains_Plugins_.0.0.1200.1920@144dpi" x="183" y="591" />
+    <location key="#Plugins.0.0.1200.1920@144dpi" x="184" y="592" />
+    <location key="#Browse_Repositories.0.0.1200.1920@144dpi" x="183" y="591" />
+    <location key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2.0.0.1200.1920@144dpi" x="0" y="550" />
+    <location key="bookmarks.0.0.1200.1920@144dpi" x="39" y="678" />
+    <location key="vcs.ApplyPatchDifferentiatedDialog.0.0.1200.1920@144dpi" x="171" y="537" />
     <size key="FileChooserDialogImpl.0.0.1920.1080" width="574" height="516" />
     <size key="#com.intellij.ide.actions.ChooseComponentsToExportDialog.0.0.1920.1080" width="593" height="260" />
     <size key="new project wizard.0.0.1920.1080" width="738" height="718" />
@@ -236,37 +302,37 @@
     <size key="GridCell.Tab.0.bottom.0.0.1920.1200@168dpi" width="1852" height="259" />
     <size key="replaceTextDialog.0.0.1920.1200@168dpi" width="641" height="1038" />
     <size key="ReplaceDuplicatesPrompt.0.0.1920.1200@168dpi" width="1847" height="166" />
-    <size key="SettingsEditor.0.0.1920.1200@144dpi" width="1816" height="1178" />
-    <size key="GridCell.Tab.0.left.0.0.1920.1200@144dpi" width="1860" height="401" />
-    <size key="GridCell.Tab.0.center.0.0.1920.1200@144dpi" width="1860" height="401" />
-    <size key="GridCell.Tab.0.right.0.0.1920.1200@144dpi" width="1860" height="401" />
-    <size key="GridCell.Tab.0.bottom.0.0.1920.1200@144dpi" width="1860" height="401" />
-    <size key="replaceTextDialog.0.0.1920.1200@144dpi" width="620" height="933" />
-    <size key="ReplaceDuplicatesPrompt.0.0.1920.1200@144dpi" width="1685" height="157" />
-    <size key="RollbackChangesDialog.0.0.1920.1200@144dpi" width="573" height="596" />
-    <size key="CommitChangelistDialog2.0.0.1920.1200@144dpi" width="1413" height="754" />
-    <size key="findTextDialog.0.0.1920.1200@144dpi" width="859" height="891" />
-    <size key="GridCell.Tab.1.left.0.0.1920.1200@144dpi" width="1860" height="401" />
-    <size key="GridCell.Tab.1.center.0.0.1920.1200@144dpi" width="1860" height="401" />
-    <size key="GridCell.Tab.1.right.0.0.1920.1200@144dpi" width="1860" height="401" />
-    <size key="GridCell.Tab.1.bottom.0.0.1920.1200@144dpi" width="1860" height="401" />
-    <size key="GridCell.Tab.2.left.0.0.1920.1200@144dpi" width="1860" height="401" />
-    <size key="GridCell.Tab.2.center.0.0.1920.1200@144dpi" width="1860" height="401" />
-    <size key="GridCell.Tab.2.right.0.0.1920.1200@144dpi" width="1860" height="401" />
-    <size key="GridCell.Tab.2.bottom.0.0.1920.1200@144dpi" width="1860" height="401" />
+    <size key="SettingsEditor.0.0.1920.1200@144dpi" width="1569" height="1026" />
+    <size key="GridCell.Tab.0.left.0.0.1920.1200@144dpi" width="1920" height="673" />
+    <size key="GridCell.Tab.0.center.0.0.1920.1200@144dpi" width="1920" height="673" />
+    <size key="GridCell.Tab.0.right.0.0.1920.1200@144dpi" width="1920" height="673" />
+    <size key="GridCell.Tab.0.bottom.0.0.1920.1200@144dpi" width="1920" height="673" />
+    <size key="replaceTextDialog.0.0.1920.1200@144dpi" width="1008" height="933" />
+    <size key="ReplaceDuplicatesPrompt.0.0.1920.1200@144dpi" width="1685" height="154" />
+    <size key="RollbackChangesDialog.0.0.1920.1200@144dpi" width="656" height="596" />
+    <size key="CommitChangelistDialog2.0.0.1920.1200@144dpi" width="1562" height="964" />
+    <size key="findTextDialog.0.0.1920.1200@144dpi" width="1325" height="1170" />
+    <size key="GridCell.Tab.1.left.0.0.1920.1200@144dpi" width="1920" height="517" />
+    <size key="GridCell.Tab.1.center.0.0.1920.1200@144dpi" width="1920" height="517" />
+    <size key="GridCell.Tab.1.right.0.0.1920.1200@144dpi" width="1920" height="517" />
+    <size key="GridCell.Tab.1.bottom.0.0.1920.1200@144dpi" width="1920" height="517" />
+    <size key="GridCell.Tab.2.left.0.0.1920.1200@144dpi" width="1920" height="517" />
+    <size key="GridCell.Tab.2.center.0.0.1920.1200@144dpi" width="1920" height="517" />
+    <size key="GridCell.Tab.2.right.0.0.1920.1200@144dpi" width="1920" height="517" />
+    <size key="GridCell.Tab.2.bottom.0.0.1920.1200@144dpi" width="1920" height="517" />
     <size key="VCS.ChangeListViewerDialog.0.0.1920.1200@144dpi" width="865" height="635" />
     <size key="git4idea.ui.GitUnstashDialog.0.0.1920.1200@144dpi" width="1712" height="479" />
     <size key="com.intellij.openapi.editor.actions.MultiplePasteAction$1.0.0.1920.1200@144dpi" width="484" height="1082" />
     <size key="git4idea.history.wholeTree.VcsStructureChooser.0.0.1920.1200@144dpi" width="634" height="565" />
     <size key="DiffContextDialog.0.0.1920.1200@144dpi" width="1546" height="991" />
-    <size key="MergeDialog.0.0.1920.1200@144dpi" width="1920" height="1200" />
+    <size key="MergeDialog.0.0.1920.1200@144dpi" width="1920" height="1172" />
     <size key="MultipleFileMergeDialog.0.0.1920.1200@144dpi" width="1210" height="556" />
-    <size key="FileChooserDialogImpl.0.0.1920.1200@144dpi" width="634" height="715" />
+    <size key="FileChooserDialogImpl.0.0.1920.1200@144dpi" width="732" height="715" />
     <size key="git4idea.ui.GitStashDialog.0.0.1920.1200@144dpi" width="999" height="264" />
     <size key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.1920.1200@144dpi" width="1384" height="715" />
-    <size key="#com.intellij.debugger.actions.ViewTextAction.0.0.1920.1200@144dpi" width="484" height="415" />
+    <size key="#com.intellij.debugger.actions.ViewTextAction.0.0.1920.1200@144dpi" width="710" height="566" />
     <size key="#Browse_JetBrains_Plugins_.0.0.1920.1200@144dpi" width="834" height="715" />
-    <size key="VCS.EditChangelistDialog.0.0.1920.1200@144dpi" width="383" height="294" />
+    <size key="VCS.EditChangelistDialog.0.0.1920.1200@144dpi" width="518" height="294" />
     <size key="#article-ingestor.js.0.0.1920.1200@144dpi" width="842" height="620" />
     <size key="EditParametersPopupWindow.0.0.1920.1200@144dpi" width="636" height="357" />
     <size key="NewModule_or_Project.wizard.0.0.1920.1200@144dpi" width="1206" height="920" />
@@ -285,8 +351,103 @@
     <size key="RollbackChangesDialog.0.0.3200.1200@144dpi" width="508" height="628" />
     <size key="SettingsEditor.0.0.3200.1200@144dpi" width="1574" height="1017" />
     <size key="SettingsEditor.0.0.1280.1024@144dpi" width="1476" height="1014" />
-    <size key="VCS.FileHistoryDialog.0.0.1920.1200@144dpi" width="1505" height="932" />
-    <size key="DebuggerActiveHint.0.0.1920.1200@144dpi" width="543" height="592" />
+    <size key="VCS.FileHistoryDialog.0.0.1920.1200@144dpi" width="1526" height="932" />
+    <size key="DebuggerActiveHint.0.0.1920.1200@144dpi" width="1260" height="592" />
+    <size key="OptionsEditor.0.0.1920.1200@144dpi" width="1540" height="1198" />
+    <size key="VCS.ChangelistChooser.0.0.1920.1200@144dpi" width="358" height="397" />
+    <size key="#xdebugger.evaluate.0.0.1920.1200@144dpi" width="851" height="511" />
+    <size key="#profile-categories-updater-bin.js.0.0.1920.1200@144dpi" width="835" height="648" />
+    <size key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog.0.0.1920.1200@144dpi" width="778" height="736" />
+    <size key="#com.intellij.ide.actions.ChooseComponentsToExportDialog.0.0.1920.1200@144dpi" width="784" height="368" />
+    <size key="Vcs.CompareWithSelectedRevision.Popup.0.0.1920.1200@144dpi" width="471" height="430" />
+    <size key="#com.intellij.fileTypes.FileTypeChooser.0.0.1920.1200@144dpi" width="1069" height="474" />
+    <size key="javadoc.popup.0.0.1920.1200@144dpi" width="902" height="630" />
+    <size key="ProcessPopupWindow.0.0.1920.1200@144dpi" width="1654" height="156" />
+    <size key="findTextDialog.1920.0.1280.1024@144dpi" width="1263" height="818" />
+    <size key="GridCell.Tab.1.left.1920.0.1280.1024@144dpi" width="1920" height="530" />
+    <size key="GridCell.Tab.1.center.1920.0.1280.1024@144dpi" width="1920" height="530" />
+    <size key="GridCell.Tab.1.right.1920.0.1280.1024@144dpi" width="1920" height="530" />
+    <size key="GridCell.Tab.1.bottom.1920.0.1280.1024@144dpi" width="1920" height="530" />
+    <size key="DebuggerActiveHint.1920.0.1280.1024@144dpi" width="858" height="673" />
+    <size key="GridCell.Tab.0.left.1920.0.1280.1024@144dpi" width="1920" height="530" />
+    <size key="GridCell.Tab.0.center.1920.0.1280.1024@144dpi" width="1920" height="530" />
+    <size key="GridCell.Tab.0.right.1920.0.1280.1024@144dpi" width="1920" height="530" />
+    <size key="GridCell.Tab.0.bottom.1920.0.1280.1024@144dpi" width="1920" height="530" />
+    <size key="GridCell.Tab.2.left.1920.0.1280.1024@144dpi" width="1920" height="530" />
+    <size key="GridCell.Tab.2.center.1920.0.1280.1024@144dpi" width="1920" height="530" />
+    <size key="GridCell.Tab.2.right.1920.0.1280.1024@144dpi" width="1920" height="530" />
+    <size key="GridCell.Tab.2.bottom.1920.0.1280.1024@144dpi" width="1920" height="530" />
+    <size key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.1920.1200@144dpi" width="807" height="320" />
+    <size key="CommitChangelistDialog2.1920.0.1280.1024@144dpi" width="1274" height="748" />
+    <size key="com.intellij.openapi.editor.actions.MultiplePasteAction$1.1920.0.1280.1024@144dpi" width="478" height="1022" />
+    <size key="FileDocumentManager.FileCacheConflict.0.0.1920.1200@144dpi" width="1413" height="1170" />
+    <size key="jetbrains.nodejs.interpreters-dialog.0.0.1920.1200@144dpi" width="829" height="670" />
+    <size key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2.0.0.1920.1200@144dpi" width="1602" height="792" />
+    <size key="new project wizard.0.0.1920.1200@144dpi" width="1001" height="1116" />
+    <size key="#epub-scraper.js.0.0.1920.1200@144dpi" width="839" height="508" />
+    <size key="#single-epub-ingestor-bin.js.0.0.1920.1200@144dpi" width="840" height="508" />
+    <size key="#epub-ingestor-bin.js.0.0.1920.1200@144dpi" width="840" height="508" />
+    <size key="#xdebugger.XInspectDialog.0.0.1920.1200@144dpi" width="1914" height="728" />
+    <size key="DiffContextDialog.1920.0.1280.1024@144dpi" width="1274" height="965" />
+    <size key="Vcs.Push.Dialog.0.0.1920.1200@144dpi" width="1382" height="830" />
+    <size key="#query-parser.0.0.1920.1200@144dpi" width="796" height="744" />
+    <size key="XDebugger.FullValuePopup.0.0.1920.1200@144dpi" width="962" height="615" />
+    <size key="#Live_Templates.0.0.1920.1200@144dpi" width="1189" height="1170" />
+    <size key="#com.intellij.codeInsight.template.impl.EditVariableDialog.0.0.1920.1200@144dpi" width="903" height="394" />
+    <size key="#Inspections.0.0.1920.1200@144dpi" width="734" height="718" />
+    <size key="vcs.readOnlyHandler.ReadOnlyStatusDialog.0.0.1920.1200@144dpi" width="639" height="462" />
+    <size key="#Usage_Scope.0.0.1920.1200@144dpi" width="967" height="430" />
+    <size key="#com.intellij.ide.scriptingContext.ui.LibraryScopesDialog.0.0.1920.1200@144dpi" width="528" height="462" />
+    <size key="#com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsDialog.0.0.1920.1200@144dpi" width="979" height="650" />
+    <size key="git4idea.rebase.GitRebaseDialog.0.0.1920.1200@144dpi" width="1041" height="465" />
+    <size key="#xdebugger.code.fragment.editor.0.0.1920.1200@144dpi" width="478" height="412" />
+    <size key="#server.js.0.0.1920.1200@144dpi" width="785" height="544" />
+    <size key="bookmarks.0.0.1920.1200@144dpi" width="1113" height="508" />
+    <size key="findTextDialog.0.0.1200.1920@144dpi" width="1200" height="1892" />
+    <size key="GridCell.Tab.0.left.0.0.1200.1920@144dpi" width="1200" height="631" />
+    <size key="GridCell.Tab.0.center.0.0.1200.1920@144dpi" width="1200" height="631" />
+    <size key="GridCell.Tab.0.right.0.0.1200.1920@144dpi" width="1200" height="631" />
+    <size key="GridCell.Tab.0.bottom.0.0.1200.1920@144dpi" width="1200" height="631" />
+    <size key="GridCell.Tab.1.left.0.0.1200.1920@144dpi" width="1200" height="631" />
+    <size key="GridCell.Tab.1.center.0.0.1200.1920@144dpi" width="1200" height="631" />
+    <size key="GridCell.Tab.1.right.0.0.1200.1920@144dpi" width="1200" height="631" />
+    <size key="GridCell.Tab.1.bottom.0.0.1200.1920@144dpi" width="1200" height="631" />
+    <size key="GridCell.Tab.2.left.0.0.1200.1920@144dpi" width="1200" height="631" />
+    <size key="GridCell.Tab.2.center.0.0.1200.1920@144dpi" width="1200" height="631" />
+    <size key="GridCell.Tab.2.right.0.0.1200.1920@144dpi" width="1200" height="631" />
+    <size key="GridCell.Tab.2.bottom.0.0.1200.1920@144dpi" width="1200" height="631" />
+    <size key="CommitChangelistDialog2.0.0.1200.1920@144dpi" width="1200" height="1892" />
+    <size key="git4idea.history.wholeTree.VcsStructureChooser.0.0.1200.1920@144dpi" width="628" height="562" />
+    <size key="com.intellij.openapi.editor.actions.MultiplePasteAction$1.0.0.1200.1920@144dpi" width="478" height="1169" />
+    <size key="MergeDialog.0.0.1200.1920@144dpi" width="1241" height="1026" />
+    <size key="MultipleFileMergeDialog.0.0.1200.1920@144dpi" width="985" height="555" />
+    <size key="#xdebugger.evaluate.0.0.1200.1920@144dpi" width="803" height="488" />
+    <size key="RollbackChangesDialog.0.0.1200.1920@144dpi" width="786" height="881" />
+    <size key="#Live_Templates.0.0.1200.1920@144dpi" width="775" height="1138" />
+    <size key="SettingsEditor.0.0.1200.1920@144dpi" width="1345" height="1036" />
+    <size key="DiffContextDialog.0.0.1200.1920@144dpi" width="1200" height="1024" />
+    <size key="FileChooserDialogImpl.0.0.1200.1920@144dpi" width="628" height="712" />
+    <size key="replaceTextDialog.0.0.1200.1920@144dpi" width="604" height="898" />
+    <size key="FileDocumentManager.FileCacheConflict.0.0.1200.1920@144dpi" width="1274" height="1022" />
+    <size key="Diff.GoToChangePopup.1920.0.1280.1024@144dpi" width="653" height="690" />
+    <size key="XDebugger.FullValuePopup.0.0.1200.1920@144dpi" width="606" height="978" />
+    <size key="javadoc.popup.0.0.1200.1920@144dpi" width="904" height="640" />
+    <size key="DebuggerActiveHint.0.0.1200.1920@144dpi" width="820" height="677" />
+    <size key="#xdebugger.code.fragment.editor.0.0.1200.1920@144dpi" width="478" height="412" />
+    <size key="refactoring.ChangeSignatureDialog.0.0.1200.1920@144dpi" width="555" height="790" />
+    <size key="DetectedRootsChooserDialog.0.0.1200.1920@144dpi" width="868" height="616" />
+    <size key="Vcs.Push.Dialog.0.0.1200.1920@144dpi" width="1194" height="832" />
+    <size key="VCS.ChangelistChooser.0.0.1200.1920@144dpi" width="358" height="401" />
+    <size key="VCS.ChangeListViewerDialog.0.0.1200.1920@144dpi" width="612" height="885" />
+    <size key="ReplaceDuplicatesPrompt.0.0.1200.1920@144dpi" width="1505" height="154" />
+    <size key="new project wizard.0.0.1200.1920@144dpi" width="921" height="1161" />
+    <size key="NewModule_or_Project.wizard.0.0.1200.1920@144dpi" width="1084" height="882" />
+    <size key="git4idea.ui.GitUnstashDialog.0.0.1200.1920@144dpi" width="1194" height="478" />
+    <size key="#Browse_JetBrains_Plugins_.0.0.1200.1920@144dpi" width="828" height="712" />
+    <size key="#Browse_Repositories.0.0.1200.1920@144dpi" width="828" height="712" />
+    <size key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2.0.0.1200.1920@144dpi" width="1194" height="794" />
+    <size key="bookmarks.0.0.1200.1920@144dpi" width="1113" height="508" />
+    <size key="vcs.ApplyPatchDifferentiatedDialog.0.0.1200.1920@144dpi" width="852" height="819" />
     <extendedState key="DiffContextDialog" state="0" />
   </component>
 </application>

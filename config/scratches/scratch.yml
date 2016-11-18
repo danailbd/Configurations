@@ -1,0 +1,1140 @@
+/api/rating/contentBest:
+  delete:
+    tags:
+      - "Ratings"
+    consumes:
+      - "application/json"
+    produces:
+      - "application/json"
+    parameters:
+      -
+        name: "contentId"
+        in: "query"
+        required: true
+        type: "string"
+        description: "<ul> <li>The ID of the content whose ratings should be removed.</li> </ul> "
+  get:
+    tags:
+      - "Ratings"
+    summary: "Returns the content-to-content ratings for a given content. The content should be specified by: <ul>     <li>its ID with the <code>contentId</code> parameter</li>     <li>its source and source ID with the <code>content</code> parameter     (<code>content.source</code> <i>and</i> <code>content.sourceId</code>)     </li> </ul>  Optionally, the contents used for rating can be filtered using the <code>contentsToRate</code> list of objects. Each of these objects contains a specific criteria for matching contents by their: <ul>     <li>group of sources (<code>contentsToRate[i].sourceGroup</code>) (you     can also use <code>contentsToRateSourceGroup</code>)</li>     <li>specific source (<code>contentsToRate[i].source</code>)</li>     <li>specific source and source ID (<code>contentsToRate[i].source</code>     <i>and</i> <code>contentsToRate[i].sourceId</code>)     </li>     <li>any metadata field (e.g. <code>contentsToRate[i].country</code>)</li> </ul>  No rating operations will be triggered. If a rating operation is currently running, its task info (id, status [and error]) will be provided (it won&#39;t be initiated again). This behavior can be turned off by explicitly setting the <code>includeCurrentTask</code> flag to <code>false</code>. This is generally faster than the POST version of the same endpoint, since it doesn&#39;t check whether a rating operation is needed. Beware that selecting too big content sets (e.g. &quot;everything from Wikipedia&quot;) in <code>contentsToRate</code> may slow down this operation considerably. Full metadata information is returned for each recommended content, which incurs a performance penalty. If the additional information is not needed, you can turn this off by setting the <code>fullMetadata</code> flag to <code>false</code>. In this case, partial metadata will still be returned, including the <code>source</code> and <code>sourceId</code> of each recommended content. "
+    consumes:
+      - "application/json"
+    produces:
+      - "application/json"
+    parameters:
+      -
+        name: "contentId"
+        in: "query"
+        required: false
+        type: "string"
+        description: "The ID of the content. Do not pass this parameter if the <code>content</code> parameter is set. "
+      -
+        name: "content"
+        in: "query"
+        required: false
+        type: "object"
+        description: "A criteria for matching the content. Must specify <code>source</code> + <code>sourceId</code>. Do not pass this parameter if the <code>contentId</code> parameter is set. "
+      -
+        name: "content.source"
+        in: "query"
+        required: true
+        type: "string"
+        description: "The source of the content. Mandatory field for the <code>content</code> object. "
+      -
+        name: "content.sourceId"
+        in: "query"
+        required: true
+        type: "string"
+        description: "The source ID of the content. Mandatory field for the <code>content</code> object. "
+      -
+        name: "contentsToRateSourceGroup"
+        in: "query"
+        required: false
+        type: "string[]"
+        description: "Source groups to use for selecting contents for rating. This is the same as specifying one or more <code>contentsToRate</code> objects that contain <code>sourceGroup</code> property. "
+      -
+        name: "contentsToRate"
+        in: "query"
+        required: false
+        type: "object[]"
+        description: "Contents that should be used to filter the ratings, represented with their metadata. The results will contain only them as recommendations. In case there isn&#39;t a content that matches an object in <code>contentToRate</code>, it will be ingested if possible. "
+      -
+        name: "contentsToRate.source"
+        in: "query"
+        required: false
+        type: "string"
+        description: "The source of content that should be used for rating. "
+      -
+        name: "contentsToRate.sourceId"
+        in: "query"
+        required: false
+        type: "string"
+        description: "The source ID of content that should be used for rating. "
+      -
+        name: "contentsToRate.acquisitionDate"
+        in: "query"
+        required: false
+        type: "number"
+        description: "The minimum timestamp of the returned content. The value should be in seconds. "
+      -
+        name: "contentsToRate.sourceGroup"
+        in: "query"
+        required: false
+        type: "string"
+        description: "The source group to use. Will be expanded to several <code>source</code> criteria objects. Therefore, it&#39;s just a shortcut to specifying multiple criteria objects with different <code>source</code> fields. Can be <code>web</code>, <code>books</code> or <code>wikipedia</code>. "
+      -
+        name: "contentsToRate.some_field"
+        in: "query"
+        required: false
+        type: "string"
+        description: "By the <code>some_field</code> property of the content metadata (e.g. <code>some_field</code> can be <code>country</code>). "
+      -
+        name: "includeLastRated"
+        in: "query"
+        required: false
+        type: "boolean"
+        description: "Whether the include information about the last successful CvC task for the given content. "
+      -
+        name: "from"
+        in: "query"
+        required: false
+        type: "number"
+        description: "The start value for the range of ratings to return. "
+      -
+        name: "to"
+        in: "query"
+        required: false
+        type: "number"
+        description: "The end value for the range of ratings to return. "
+      -
+        name: "fullMetadata"
+        in: "query"
+        required: false
+        type: "boolean"
+        description: "Whether to return all metadata for each recommended content. "
+      -
+        name: "includeCurrentTask"
+        in: "query"
+        required: false
+        type: "boolean"
+        description: "Whether to return information about currently running tasks for the specified content. "
+    responses:
+      200:
+        description: "successful operation"
+        schema:
+          type: "object[]"
+          items:
+            $ref: "#/definitions/GetApiRatingContentbest"
+  post:
+    tags:
+      - "Ratings"
+    summary: "Returns the content-to-content ratings for a given content. The content should be specified by: <ul>     <li>its ID with the <code>contentId</code> parameter</li>     <li>its source and source ID with the <code>content</code> parameter     (<code>content.source</code> <i>and</i> <code>content.sourceId</code>)     </li> </ul>  Optionally, the best recommendations can be filtered using the <code>contentsToRate</code> list of objects. Each of these objects contains a specific criteria for matching contents by their: <ul>     <li>group of sources (<code>contentsToRate[i].sourceGroup</code>)</li>     <li>specific source(s) (<code>contentsToRate[i].source</code>)</li>     <li>specific source and source ID (<code>contentsToRate[i].source</code>     <i>and</i> <code>contentsToRate[i].sourceId</code>)     </li>     <li>any metadata field (e.g. <code>contentsToRate[i].country</code>)</li> </ul>  An optional feature enabled with the <code>priorityContents</code> parameter is putting a selection of contents at the top of the list for rating. This is done with a similar format as <code>contentsToRate</code>. If a rating operation is currently running, its task info (id, status [and error]) will be provided (it won&#39;t be initiated again) along with a list of the currently available partial list of ratings. Otherwise, a new rating operation will be triggered. If the <code>itemsToRate</code> option is not specified, all existing contents will be rated from scratch. If <code>itemsToRate</code> is specified, it needs to be a list of objects. Each object specifies a condition, and all contents matching any of these conditions will be rated. Currently, the following conditions are acceptable: <ul>     <li>Rate all contents from a source (<code>itemsToRate[i].source</code>)</li>     <li>Rate all contents from a source group (<code>itemsToRate[i].sourceGroup</code>)</li> </ul> Multiple objects of the same type, but with different values, can be specified. (see the examples). If a new operation is initiated, the ID of its task is given in the response, to ease checking whether the ratings are ready. Note that the check whether a training operation is necessary is pretty expensive and thus slower than the GET variant of this operation (which doesn&#39;t initiate trainings and doesn&#39;t need to do such checks). Full metadata information is returned for each recommended content, which incurs a performance penalty. If the additional information is not needed, you can turn this off by setting the <code>fullMetadata</code> flag to <code>false</code>. In this case, partial metadata will still be returned, including the <code>source</code> and <code>sourceId</code> of each recommended content. This endpoint accepts Content-Type <code>application/json</code> and <code>application/www-x-form-encoded</code>. <i>This endpoint supports <b>WebHook calls</b>. Pass <code>webhookId</code> <b>URI</b> to the request query string for notification on task finished.</i> <i>WebHook call is as follows</i>:</br>     <code>POST WebHookURI {taskId: &quot;task_id&quot;}</code>  on success </br>     <code>POST WebHookURI {error: &quot;Error message&quot;}</code> on error "
+    consumes:
+      - "application/json"
+    produces:
+      - "application/json"
+    parameters:
+      -
+        in: "body"
+        name: "body"
+        description: "Returns the content-to-content ratings for a given content. The content should be specified by: <ul>     <li>its ID with the <code>contentId</code> parameter</li>     <li>its source and source ID with the <code>content</code> parameter     (<code>content.source</code> <i>and</i> <code>content.sourceId</code>)     </li> </ul>  Optionally, the best recommendations can be filtered using the <code>contentsToRate</code> list of objects. Each of these objects contains a specific criteria for matching contents by their: <ul>     <li>group of sources (<code>contentsToRate[i].sourceGroup</code>)</li>     <li>specific source(s) (<code>contentsToRate[i].source</code>)</li>     <li>specific source and source ID (<code>contentsToRate[i].source</code>     <i>and</i> <code>contentsToRate[i].sourceId</code>)     </li>     <li>any metadata field (e.g. <code>contentsToRate[i].country</code>)</li> </ul>  An optional feature enabled with the <code>priorityContents</code> parameter is putting a selection of contents at the top of the list for rating. This is done with a similar format as <code>contentsToRate</code>. If a rating operation is currently running, its task info (id, status [and error]) will be provided (it won&#39;t be initiated again) along with a list of the currently available partial list of ratings. Otherwise, a new rating operation will be triggered. If the <code>itemsToRate</code> option is not specified, all existing contents will be rated from scratch. If <code>itemsToRate</code> is specified, it needs to be a list of objects. Each object specifies a condition, and all contents matching any of these conditions will be rated. Currently, the following conditions are acceptable: <ul>     <li>Rate all contents from a source (<code>itemsToRate[i].source</code>)</li>     <li>Rate all contents from a source group (<code>itemsToRate[i].sourceGroup</code>)</li> </ul> Multiple objects of the same type, but with different values, can be specified. (see the examples). If a new operation is initiated, the ID of its task is given in the response, to ease checking whether the ratings are ready. Note that the check whether a training operation is necessary is pretty expensive and thus slower than the GET variant of this operation (which doesn&#39;t initiate trainings and doesn&#39;t need to do such checks). Full metadata information is returned for each recommended content, which incurs a performance penalty. If the additional information is not needed, you can turn this off by setting the <code>fullMetadata</code> flag to <code>false</code>. In this case, partial metadata will still be returned, including the <code>source</code> and <code>sourceId</code> of each recommended content. This endpoint accepts Content-Type <code>application/json</code> and <code>application/www-x-form-encoded</code>. <i>This endpoint supports <b>WebHook calls</b>. Pass <code>webhookId</code> <b>URI</b> to the request query string for notification on task finished.</i> <i>WebHook call is as follows</i>:</br>     <code>POST WebHookURI {taskId: &quot;task_id&quot;}</code>  on success </br>     <code>POST WebHookURI {error: &quot;Error message&quot;}</code> on error "
+        required: true
+        schema:
+          $ref: "#/definitions/PostApiRatingContentbest"
+    responses:
+      200:
+        description: "successful operation"
+        schema:
+          type: "object[]"
+          items:
+            $ref: "#/definitions/PostApiRatingContentbest"
+/api/rating/categoryBest:
+  get:
+    tags:
+      - "Ratings"
+    summary: "Returns the best ratings (contents) for a given category. If no range is specified (with the &quot;from&quot; and &quot;to&quot; parameters), a default limit of 200 ratings is used. Full metadata information is returned for each recommended content, which incurs a performance penalty. If the additional information is not needed, you can turn this off by setting the <code>fullMetadata</code> flag to <code>false</code>. In this case, partial metadata will still be returned, including the <code>source</code> and <code>sourceId</code> of each recommended content. "
+    consumes:
+      - "application/json"
+    produces:
+      - "application/json"
+    parameters:
+      -
+        name: "categoryId"
+        in: "query"
+        required: true
+        type: "string"
+        description: "The ID of the target category to return recommendations against. "
+      -
+        name: "from"
+        in: "query"
+        required: false
+        type: "number"
+        description: "The beginning of the requested range of ratings. "
+      -
+        name: "to"
+        in: "query"
+        required: false
+        type: "number"
+        description: "The end of the requested range of ratings. "
+      -
+        name: "runId"
+        in: "query"
+        required: false
+        type: "string[]"
+        description: "Return only ratings associated with the given runs. Can be specified more than one time for filtering by multiple runs. "
+      -
+        name: "content"
+        in: "query"
+        required: false
+        type: "object"
+        description: "Contains various constraints for selecting the contents which should be included in the ratings list. The constraints are based on fields in the metadata object stored in the database. "
+      -
+        name: "content.source"
+        in: "query"
+        required: false
+        type: "string[]"
+        description: "Return only ratings associated with the given content source. Can be specified more than one time for filtering by multiple content sources. "
+      -
+        name: "fullMetadata"
+        in: "query"
+        required: false
+        type: "boolean"
+        description: "Whether to return all metadata for each recommended content. "
+    responses:
+      200:
+        description: "successful operation"
+        schema:
+          type: null
+          items:
+            $ref: "#/definitions/GetApiRatingCategorybest"
+  post:
+    tags:
+      - "Ratings"
+    summary: "Returns the best ratings (contents) for a given category. If no range is specified (with the &quot;from&quot; and &quot;to&quot; parameters), a default limit of 200 ratings is used. Full metadata information is returned for each recommended content, which incurs a performance penalty. If the additional information is not needed, you can turn this off by setting the <code>fullMetadata</code> flag to <code>false</code>. In this case, partial metadata will still be returned, including the <code>source</code> and <code>sourceId</code> of each recommended content. "
+    consumes:
+      - "application/json"
+    produces:
+      - "application/json"
+    parameters:
+      -
+        in: "body"
+        name: "body"
+        description: "Returns the best ratings (contents) for a given category. If no range is specified (with the &quot;from&quot; and &quot;to&quot; parameters), a default limit of 200 ratings is used. Full metadata information is returned for each recommended content, which incurs a performance penalty. If the additional information is not needed, you can turn this off by setting the <code>fullMetadata</code> flag to <code>false</code>. In this case, partial metadata will still be returned, including the <code>source</code> and <code>sourceId</code> of each recommended content. "
+        required: true
+        schema:
+          $ref: "#/definitions/PostApiRatingCategorybest"
+    responses:
+      200:
+        description: "successful operation"
+        schema:
+          type: null
+          items:
+            $ref: "#/definitions/PostApiRatingCategorybest"
+/api/rating/categoryBestCount:
+  get:
+    tags:
+      - "Ratings"
+    summary: "Will return the number of ratings against a given category. Uses the same arguments as <code>/rating/categoryBest</code>. "
+    consumes:
+      - "application/json"
+    produces:
+      - "application/json"
+    parameters: []
+  post:
+    tags:
+      - "Ratings"
+    summary: "Will return the number of ratings against a given category. Uses the same arguments as <code>/rating/categoryBest</code>. "
+    consumes:
+      - "application/json"
+    produces:
+      - "application/json"
+    parameters:
+      -
+        in: "body"
+        name: "body"
+        description: "Will return the number of ratings against a given category. Uses the same arguments as <code>/rating/categoryBest</code>. "
+        schema:
+          $ref: "#/definitions/null"
+/api/rating/categoryBestCSV:
+  get:
+    tags:
+      - "Ratings"
+    summary: "Returns the best ratings (contents) for a given category in a .csv file. "
+    consumes:
+      - "application/json"
+    produces:
+      - "application/json"
+    parameters:
+      -
+        name: "categoryId"
+        in: "query"
+        required: true
+        type: "string"
+        description: "The ID of the target category to return recommendations against. "
+      -
+        name: "source"
+        in: "query"
+        required: false
+        type: "string"
+        description: "Filter results by their source. Can be specified multiple times for filtering on multiple sources "
+      -
+        name: "minConfidence"
+        in: "query"
+        required: false
+        type: "number"
+        description: "A minimum confidence score for the returned contents. "
+      -
+        name: "maxConfidence"
+        in: "query"
+        required: false
+        type: "number"
+        description: "A max confidence score for the returned contents. "
+/api/rating/contentCategoryRatings:
+  get:
+    tags:
+      - "Ratings"
+    summary: "Will return the categories which are closest to the content along with the scores for each of them. The result is sorted by score. "
+    consumes:
+      - "application/json"
+    produces:
+      - "application/json"
+    parameters:
+      -
+        name: "contentId"
+        in: "query"
+        required: true
+        type: "string"
+        description: "The target content ID. "
+      -
+        name: "productionReady"
+        in: "query"
+        required: false
+        type: "boolean"
+        description: "Whether to include only production ready categories. "
+      -
+        name: "from"
+        in: "query"
+        required: false
+        type: "number"
+        description: "The beginning of the requested range of ratings. "
+      -
+        name: "to"
+        in: "query"
+        required: false
+        type: "number"
+        description: "The end of the requested range of ratings. "
+      -
+        name: "minScore"
+        in: "query"
+        required: false
+        type: "number"
+        description: "The minimum score that the ratings should have. "
+      -
+        name: "maxScore"
+        in: "query"
+        required: false
+        type: "number"
+        description: "The maximum score that the ratings should have. "
+    responses:
+      200:
+        description: "successful operation"
+        schema:
+          type: null
+          items:
+            $ref: "#/definitions/GetApiRatingContentcategoryratings"
+/api/rating/contentCategoryRatingsCount:
+  get:
+    tags:
+      - "Ratings"
+    summary: "Will return the number of categories rated against the given content. Uses the same arguments as <code>/rating/contentCategoryRatings</code>. "
+    consumes:
+      - "application/json"
+    produces:
+      - "application/json"
+    parameters: []
+/api/rating/profileInsight:
+  get:
+    tags:
+      - "Ratings"
+    summary: "Returns the best ratings (contents) for a given profile (uses its category). If no range is specified (with the &quot;from&quot; and &quot;to&quot; parameters), a default limit of 200 ratings is used. "
+    consumes:
+      - "application/json"
+    produces:
+      - "application/json"
+    parameters:
+      -
+        name: "profileId"
+        in: "query"
+        required: true
+        type: "string"
+        description: "The ID of the target profile to return recommendations against. "
+      -
+        name: "from"
+        in: "query"
+        required: false
+        type: "number"
+        description: "The beginning of the requested range of ratings. "
+      -
+        name: "to"
+        in: "query"
+        required: false
+        type: "number"
+        description: "The end of the requested range of ratings. "
+      -
+        name: "content"
+        in: "query"
+        required: false
+        type: "object"
+        description: "Contains various constraints for selecting the contents which should be included in the ratings list. The constraints are based on fields in the metadata object stored in the database. "
+      -
+        name: "content.source"
+        in: "query"
+        required: false
+        type: "string[]"
+        description: "Return only ratings associated with the given content source. Can be specified more than one time for filtering by multiple content sources. "
+    responses:
+      200:
+        description: "successful operation"
+        schema:
+          type: null
+          items:
+            $ref: "#/definitions/GetApiRatingProfileinsight"
+/api/rating/smartFolder:
+  get:
+    tags:
+      - "Ratings"
+    summary: "Finds content that matches the specified smart folder. Supports metadata filtering and pagination. Full metadata information is returned for each recommended content, which incurs a performance penalty. If the additional information is not needed, you can turn this off by setting the <code>fullMetadata</code> flag to <code>false</code>. If the <code>useCache</code> flag is specified as well, partial metadata will still be returned, including the <code>source</code> and <code>sourceId</code> of each recommended content; if <code>useCache</code> is set to <code>false</code>, no metadata will be returned - only contentId and the relevant scores. <i>This endpoint supports <b>WebHook calls</b>. Pass <code>webhookId</code> <b>URI</b> to the request query string.</i> <i>WebHook call is as follows</i>:</br>     <code>POST WebHookURI [ratings]</code>  on success </br>     <code>POST WebHookURI {error: &quot;Error message&quot;}</code> on error "
+    consumes:
+      - "application/json"
+    produces:
+      - "application/json"
+    parameters:
+      -
+        name: "smartFolderId"
+        in: "query"
+        required: false
+        type: "string"
+        description: "The ID of the smart folder. If present, the categories defining the smart folder will be used to find matching contents "
+      -
+        name: "smartFolderJSON"
+        in: "query"
+        required: false
+        type: "string"
+        description: "A serialized JSON array, describing the categories and contents in the smart folder, in the format specified for <code>smartFolderItem</code>. Only used when no smartFolderId is provided. "
+      -
+        name: "smartFolderItem"
+        in: "query"
+        required: false
+        type: "object"
+        description: "The different categories and contents in the smart folder, encoded as JSON strings. They should be in the {categoryId(contentId): &quot;...&quot;, min: ..., max: ...} format. Only used when no smartFolderId and no smartFolderJSON are provided. "
+      -
+        name: "from"
+        in: "query"
+        required: false
+        type: "number"
+        description: "The beginning of the requested range "
+      -
+        name: "to"
+        in: "query"
+        required: false
+        type: "number"
+        description: "The end of the requested range "
+      -
+        name: "useCache"
+        in: "query"
+        required: false
+        type: "boolean"
+        description: "Whether to return results from the smart folder cache or to extract the newest ratings. Only used when smartFolderId is specified. Smart folders cache is automatically updated every hour and on each smart folder update, so in general using it provides up-to-date results. "
+      -
+        name: "fullMetadata"
+        in: "query"
+        required: false
+        type: "boolean"
+        description: "Whether to return all metadata for each recommended content. "
+      -
+        name: "metadataFilter"
+        in: "query"
+        required: false
+        type: "object"
+        description: "Used to filter results based on arbitrary metadata fields, e.g. metadaFilter.source=Wikipedia will only return results from Wikipedia "
+      -
+        name: "metadataFilter.acquisitionDate"
+        in: "query"
+        required: false
+        type: "number"
+        description: "A timestamp specifying the oldest acceptable acquisition date, i.e. only newer contents will be returned. The value should be in seconds. "
+      -
+        name: "contentSourceGroup"
+        in: "query"
+        required: false
+        type: "string"
+        description: "Allowed values: wikipedia, books and web. Specifies contents from which sources to be returned "
+    responses:
+      200:
+        description: "successful operation"
+        schema:
+          type: "object[]"
+          items:
+            $ref: "#/definitions/GetApiRatingSmartfolder"
+/api/rating/smartFolderCount:
+  get:
+    tags:
+      - "Ratings"
+    consumes:
+      - "application/json"
+    produces:
+      - "application/json"
+    parameters:
+      -
+        name: "smartFolderId"
+        in: "query"
+        required: false
+        type: "string"
+        description: "The ID of the smart folder. If present, the categories defining the smart folder will be used to find matching contents "
+      -
+        name: "smartFolderJSON"
+        in: "query"
+        required: false
+        type: "string"
+        description: "A serialized JSON array, describing the categories and contents in the smart folder, in the format specified for <code>smartFolderItem</code>. Only used when no smartFolderId is provided. "
+      -
+        name: "smartFolderItem"
+        in: "query"
+        required: false
+        type: "object"
+        description: "The different categories and contents in the smart folder, encoded as JSON strings. They should be in the {categoryId(contentId): &quot;...&quot;, min: ..., max: ...} format. Only used when no smartFolderId and no smartFolderJSON are provided. "
+      -
+        name: "useCache"
+        in: "query"
+        required: false
+        type: "boolean"
+        description: "Whether to return results from the smart folder cache or to extract the newest ratings. Only used when smartFolderId is specified. Smart folders cache is automatically updated every hour and on each smart folder update, so in general using it provides up-to-date results. "
+      -
+        name: "metadataFilter"
+        in: "query"
+        required: false
+        type: "object"
+        description: "Used to filter results based on arbitrary metadata fields, e.g. metadaFilter.source=Wikipedia will only return results from Wikipedia "
+      -
+        name: "metadataFilter.acquisitionDate"
+        in: "query"
+        required: false
+        type: "number"
+        description: "A timestamp specifying the oldest acceptable acquisition date, i.e. only newer contents will be returned. The value should be in seconds. "
+      -
+        name: "contentSourceGroup"
+        in: "query"
+        required: false
+        type: "string"
+        description: "Allowed values: wikipedia, books and web. Specifies contents from which sources to be returned "
+    responses:
+      200:
+        description: "successful operation"
+        schema:
+          type: "number"
+          items:
+            $ref: "#/definitions/GetApiRatingSmartfoldercount"
+/api/rating/smartFolderCountIndividual:
+  get:
+    tags:
+      - "Ratings"
+    summary: "Accepts one or more smart folder categories (a combination of category ID, minimum and maximum scores) and returns the number of ratings (contents) that match each of them. "
+    consumes:
+      - "application/json"
+    produces:
+      - "application/json"
+    parameters:
+      -
+        name: "smartFolderId"
+        in: "query"
+        required: false
+        type: "string"
+        description: "The ID of the smart folder. If present, the categories and contents defining the smart folder will be used to find matching contents "
+      -
+        name: "smartFolderJSON"
+        in: "query"
+        required: false
+        type: "string"
+        description: "A serialized JSON array, describing the categories and contents in the smart folder, in the format specified for <code>smartFolderItem</code>. Only used when no smartFolderId is provided. "
+      -
+        name: "smartFolderItem"
+        in: "query"
+        required: false
+        type: "object"
+        description: "The different categories and contents in the smart folder, encoded as JSON strings. They should be in the {categoryId(contentId): &quot;...&quot;, min: ..., max: ...} format. Only used when no smartFolderId and no smartFolderJSON are provided. "
+      -
+        name: "metadataFilter"
+        in: "query"
+        required: false
+        type: "object"
+        description: "Used to filter results based on arbitrary metadata fields, e.g. metadaFilter.source=Wikipedia will only return results from Wikipedia "
+      -
+        name: "metadataFilter.acquisitionDate"
+        in: "query"
+        required: false
+        type: "number"
+        description: "A timestamp specifying the oldest acceptable acquisition date, i.e. only newer contents will be returned. The value should be in seconds. "
+      -
+        name: "contentSourceGroup"
+        in: "query"
+        required: false
+        type: "string"
+        description: "Allowed values: wikipedia, books and web. Specifies contents from which sources to be returned "
+    responses:
+      200:
+        description: "successful operation"
+        schema:
+          type: null
+          items:
+            $ref: "#/definitions/GetApiRatingSmartfoldercountindividual"
+/api/rating/smartFolderCSV:
+  get:
+    tags:
+      - "Ratings"
+    summary: "Generate a csv file from ratings matching a smart folder. The columns of the file are as follows: rank (for preserving the order), contentId, title, author, source, sourceId. <i>There is a limit of the returned ratings.</i> "
+    consumes:
+      - "application/json"
+    produces:
+      - "application/json"
+    parameters:
+      -
+        name: "smartFolderId"
+        in: "query"
+        required: false
+        type: "string"
+        description: "The ID of the smart folder. If present, the categories defining the smart folder will be used to find matching contents "
+      -
+        name: "smartFolderJSON"
+        in: "query"
+        required: false
+        type: "string"
+        description: "A serialized JSON array, describing the categories and contents in the smart folder, in the format specified for <code>smartFolderItem</code>. Only used when no smartFolderId is provided. "
+      -
+        name: "smartFolderItem"
+        in: "query"
+        required: false
+        type: "object"
+        description: "The different categories and contents in the smart folder, encoded as JSON strings. They should be in the {categoryId(contentId): &quot;...&quot;, min: ..., max: ...} format. Only used when no smartFolderId and no smartFolderJSON are provided. "
+      -
+        name: "from"
+        in: "query"
+        required: false
+        type: "number"
+        description: "The beginning of the requested range "
+      -
+        name: "to"
+        in: "query"
+        required: false
+        type: "number"
+        description: "The end of the requested range "
+      -
+        name: "useCache"
+        in: "query"
+        required: false
+        type: "boolean"
+        description: "Whether to return results from the smart folder cache or to extract the newest ratings. Only used when smartFolderId is specified. Smart folders cache is automatically updated every hour and on each smart folder update, so in general using it provides up-to-date results. "
+      -
+        name: "metadataFilter"
+        in: "query"
+        required: false
+        type: "object"
+        description: "Used to filter results based on arbitrary metadata fields, e.g. metadaFilter.source=Wikipedia will only return results from Wikipedia "
+      -
+        name: "metadataFilter.acquisitionDate"
+        in: "query"
+        required: false
+        type: "number"
+        description: "A timestamp specifying the oldest acceptable acquisition date, i.e. only newer contents will be returned. The value should be in seconds. "
+      -
+        name: "contentSourceGroup"
+        in: "query"
+        required: false
+        type: "string"
+        description: "Allowed values: wikipedia, books and web. Specifies contents from which sources to be returned "
+    responses:
+      200:
+        description: "successful operation"
+        schema:
+          type: "file"
+          items:
+            $ref: "#/definitions/GetApiRatingSmartfoldercsv"
+/api/rating/categoryToContent:
+  post:
+    tags:
+      - "Ratings"
+    summary: "Returns the score of each content in the given categories. Only works with explicitly specified items, does not return results for all contents or all categories. The result is an object with category IDs as keys and the ratings as their corresponding values in the format [{contentId: <contentId>, score: <score>}] "
+    consumes:
+      - "application/json"
+    produces:
+      - "application/json"
+    parameters:
+      -
+        in: "body"
+        name: "body"
+        description: "Returns the score of each content in the given categories. Only works with explicitly specified items, does not return results for all contents or all categories. The result is an object with category IDs as keys and the ratings as their corresponding values in the format [{contentId: <contentId>, score: <score>}] "
+        required: true
+        schema:
+          $ref: "#/definitions/PostApiRatingCategorytocontent"
+/api/rating/contentsCategoryRatingsMap:
+  post:
+    tags:
+      - "Ratings"
+    summary: "Will return a map containing categories and list of the given contents (either explicit or for given profile) and their scores for the category representing the contents that have enough score against the category. <i>The default values are defined in the system</i> "
+    consumes:
+      - "application/json"
+    produces:
+      - "application/json"
+    parameters:
+      -
+        in: "body"
+        name: "body"
+        description: "Will return a map containing categories and list of the given contents (either explicit or for given profile) and their scores for the category representing the contents that have enough score against the category. <i>The default values are defined in the system</i> "
+        required: true
+        schema:
+          $ref: "#/definitions/PostApiRatingContentscategoryratingsmap"
+    responses:
+      200:
+        description: "successful operation"
+        schema:
+          type: null
+          items:
+            $ref: "#/definitions/PostApiRatingContentscategoryratingsmap"
+/api/rating/removeAllContentBest:
+  post:
+    tags:
+      - "Ratings"
+    consumes:
+      - "application/json"
+    produces:
+      - "application/json"
+    parameters:
+      -
+        in: "body"
+        name: "body"
+        schema:
+          $ref: "#/definitions/null"
+
+
+DeleteApiRatingContentbest:
+      properties:
+        contentId:
+          type: "string"
+          description: "<ul> <li>The ID of the content whose ratings should be removed.</li> </ul> "
+      required:
+        - "contentId"
+GetApiRatingContentbest:
+  properties:
+    contentId:
+      type: "string"
+      description: "The ID of the content. Do not pass this parameter if the <code>content</code> parameter is set. "
+    content:
+      type: "object"
+      description: "A criteria for matching the content. Must specify <code>source</code> + <code>sourceId</code>. Do not pass this parameter if the <code>contentId</code> parameter is set. "
+    contentsToRateSourceGroup:
+      type: "array"
+      description: "Source groups to use for selecting contents for rating. This is the same as specifying one or more <code>contentsToRate</code> objects that contain <code>sourceGroup</code> property. "
+      items:
+        type: "string"
+    contentsToRate:
+      type: "array"
+      description: "Contents that should be used to filter the ratings, represented with their metadata. The results will contain only them as recommendations. In case there isn&#39;t a content that matches an object in <code>contentToRate</code>, it will be ingested if possible. "
+      items:
+        type: "object"
+    includeLastRated:
+      type: "boolean"
+      description: "Whether the include information about the last successful CvC task for the given content. "
+    from:
+      type: "number"
+      description: "The start value for the range of ratings to return. "
+    to:
+      type: "number"
+      description: "The end value for the range of ratings to return. "
+    fullMetadata:
+      type: "boolean"
+      description: "Whether to return all metadata for each recommended content. "
+    includeCurrentTask:
+      type: "boolean"
+      description: "Whether to return information about currently running tasks for the specified content. "
+    ratings:
+      type: "array"
+      description: "The content-to-content ratings for the given content. Can be empty if there aren&#39;t any ratings in the database. "
+      items:
+        type: "object"
+    task:
+      type: "string"
+      description: "The last task that has rated or is currently rating content against the target content. "
+  required:
+    - "ratings"
+content:
+  properties:
+    source:
+      type: "string"
+      description: "The source of the content "
+    sourceId:
+      type: "object"
+      description: "the sourceId of the content "
+  required:
+    - "source"
+    - "sourceId"
+contentsToRate:
+  properties:
+    source:
+      type: "string"
+      description: "The source of content that should be used for rating. "
+    sourceId:
+      type: "string"
+      description: "The source ID of content that should be used for rating. "
+    acquisitionDate:
+      type: "number"
+      description: "The minimum timestamp of the returned content. The value should be in seconds. "
+    sourceGroup:
+      type: "string"
+      description: "The source group to use. Will be expanded to several <code>source</code> criteria objects. Therefore, it&#39;s just a shortcut to specifying multiple criteria objects with different <code>source</code> fields. Can be <code>web</code>, <code>books</code> or <code>wikipedia</code>. "
+    some_metadata_field:
+      type: "string"
+      description: "By the <code>some_field</code> property of the content metadata (e.g. <code>some_field</code> can be <code>country</code>). "
+    items:
+      type: "array"
+      description: "If specified, recommendations will be chosen only among these contents "
+      items:
+        type: "string"
+    sources:
+      type: "array"
+      description: "A list of sources. All contents originating from these sources will be rated "
+      items:
+        type: "string"
+  required:
+    - "items"
+    - "sources"
+ratings:
+  properties:
+    score:
+      type: "number"
+      description: "The score of the current rating. A value between 0 and 1. "
+    contentId:
+      type: "string"
+      description: "The ID of the content used for rating. "
+    metadata:
+      type: "string"
+      description: "The metadata for the content. "
+  required:
+    - "score"
+    - "contentId"
+    - "metadata"
+task:
+  properties:
+    taskId:
+      type: "string"
+      description: "The ID the task "
+    error:
+      type: "string"
+      description: "The error in case the task has status is &#39;failed&#39; "
+    status:
+      type: "string"
+      description: "Either : new, running, waiting, cancelled, finished or failed "
+  required:
+    - "taskId"
+    - "status"
+PostApiRatingContentbest:
+  properties:
+    contentId:
+      type: "string"
+      description: "The ID of the content. Do not pass this parameter if the <code>content</code> parameter is set. "
+    content:
+      type: "object"
+      description: "<i>Same as in <code>contentBest</code> {get}. "
+    contentsToRate:
+      type: "array"
+      description: "<i>Same as in <code>contentBest</code> {get}. "
+      items:
+        type: "object"
+    includeLastRated:
+      type: "boolean"
+      description: "Whether the include information about the last successful CvC task for the given content with different value for the <code>itemsToRate</code> field. If the <code>itemsToRate</code> is not set, the information would be for the last successful task for the given content. "
+    priorityContents:
+      type: "array"
+      description: "<b>Deprecated</b> parameter for items that should be processed with specific priority. Now they won&#39;t be rated with priority, but Will be ingested if missing. The format for them is the same as <code>contentsToRate</code>. "
+      items:
+        type: "object"
+    itemsToRate:
+      type: "array"
+      description: "The contents for which the rating operation will be triggered. Ratings for them will be stored after the task completes. <i><b>Same filtering may be applied as in <code>contentsToRate</code></b></i> "
+      items:
+        type: "object"
+    from:
+      type: "number"
+      description: "The start value for the range of ratings to return. "
+    to:
+      type: "number"
+      description: "The end value for the range of ratings to return. "
+    generateTopResultsOnly:
+      type: "boolean"
+      description: "Whether to optimize the task to store only the top few results. Only applies if a new task is initiated. "
+    topResults:
+      type: "number"
+      description: "The number of top results to store after the task is completed. Should be a number between 0 and 20. Only applies if a new task is initiated. "
+    fullMetadata:
+      type: "boolean"
+      description: "Whether to return all metadata for each recommended content. "
+    ratings:
+      type: "array"
+      description: "The content-to-content ratings for the given content. Can be empty if there aren&#39;t any ratings in the database. "
+      items:
+        type: "object"
+    task:
+      type: "string"
+      description: "The task is or have populated the database with ratings about the given content. "
+    requestId:
+      type: "string"
+      description: "An ID of the task submission request. Should be used when cancelling the task "
+  required:
+    - "ratings"
+    - "task"
+    - "requestId"
+GetApiRatingCategorybest:
+  properties:
+    categoryId:
+      type: "string"
+      description: "The ID of the target category to return recommendations against. "
+    from:
+      type: "number"
+      description: "The beginning of the requested range of ratings. "
+    to:
+      type: "number"
+      description: "The end of the requested range of ratings. "
+    runId:
+      type: "array"
+      description: "Return only ratings associated with the given runs. Can be specified more than one time for filtering by multiple runs. "
+      items:
+        type: "string"
+    content:
+      type: "object"
+      description: "Contains various constraints for selecting the contents which should be included in the ratings list. The constraints are based on fields in the metadata object stored in the database. "
+    fullMetadata:
+      type: "boolean"
+      description: "Whether to return all metadata for each recommended content. "
+  required:
+    - "categoryId"
+PostApiRatingCategorybest:
+  properties:
+    categoryId:
+      type: "string"
+      description: "The ID of the target category to return recommendations against. "
+    from:
+      type: "number"
+      description: "The beginning of the requested range of ratings. "
+    to:
+      type: "number"
+      description: "The end of the requested range of ratings. "
+    runId:
+      type: "array"
+      description: "Return only ratings associated with the given runs. Can be specified more than one time for filtering by multiple runs. "
+      items:
+        type: "string"
+    content:
+      type: "object"
+      description: "Contains various constraints for selecting the contents which should be included in the ratings list. The constraints are based on fields in the metadata object stored in the database. "
+    fullMetadata:
+      type: "boolean"
+      description: "Whether to return all metadata for each recommended content. "
+  required:
+    - "categoryId"
+GetApiRatingCategorybestcsv:
+  properties:
+    categoryId:
+      type: "string"
+      description: "The ID of the target category to return recommendations against. "
+    source:
+      type: "string"
+      description: "Filter results by their source. Can be specified multiple times for filtering on multiple sources "
+    minConfidence:
+      type: "number"
+      description: "A minimum confidence score for the returned contents. "
+    maxConfidence:
+      type: "number"
+      description: "A max confidence score for the returned contents. "
+  required:
+    - "categoryId"
+GetApiRatingContentcategoryratings:
+  properties:
+    contentId:
+      type: "string"
+      description: "The target content ID. "
+    productionReady:
+      type: "boolean"
+      description: "Whether to include only production ready categories. "
+    from:
+      type: "number"
+      description: "The beginning of the requested range of ratings. "
+    to:
+      type: "number"
+      description: "The end of the requested range of ratings. "
+    minScore:
+      type: "number"
+      description: "The minimum score that the ratings should have. "
+    maxScore:
+      type: "number"
+      description: "The maximum score that the ratings should have. "
+  required:
+    - "contentId"
+GetApiRatingProfileinsight:
+  properties:
+    profileId:
+      type: "string"
+      description: "The ID of the target profile to return recommendations against. "
+    from:
+      type: "number"
+      description: "The beginning of the requested range of ratings. "
+    to:
+      type: "number"
+      description: "The end of the requested range of ratings. "
+    content:
+      type: "object"
+      description: "Contains various constraints for selecting the contents which should be included in the ratings list. The constraints are based on fields in the metadata object stored in the database. "
+  required:
+    - "profileId"
+GetApiRatingSmartfolder:
+  properties:
+    smartFolderId:
+      type: "string"
+      description: "The ID of the smart folder. If present, the categories defining the smart folder will be used to find matching contents "
+    smartFolderJSON:
+      type: "string"
+      description: "A serialized JSON array, describing the categories and contents in the smart folder, in the format specified for <code>smartFolderItem</code>. Only used when no smartFolderId is provided. "
+    smartFolderItem:
+      type: "object"
+      description: "The different categories and contents in the smart folder, encoded as JSON strings. They should be in the {categoryId(contentId): &quot;...&quot;, min: ..., max: ...} format. Only used when no smartFolderId and no smartFolderJSON are provided. "
+    from:
+      type: "number"
+      description: "The beginning of the requested range "
+    to:
+      type: "number"
+      description: "The end of the requested range "
+    useCache:
+      type: "boolean"
+      description: "Whether to return results from the smart folder cache or to extract the newest ratings. Only used when smartFolderId is specified. Smart folders cache is automatically updated every hour and on each smart folder update, so in general using it provides up-to-date results. "
+    fullMetadata:
+      type: "boolean"
+      description: "Whether to return all metadata for each recommended content. "
+    metadataFilter:
+      type: "object"
+      description: "Used to filter results based on arbitrary metadata fields, e.g. metadaFilter.source=Wikipedia will only return results from Wikipedia "
+    contentSourceGroup:
+      type: "string"
+      description: "Allowed values: wikipedia, books and web. Specifies contents from which sources to be returned "
+    items:
+      type: "array"
+      description: "<ul> <li>The ratings (contents) that match the smart folder.</li> </ul> "
+      items:
+        type: "object"
+  required:
+    - "items"
+GetApiRatingSmartfoldercount:
+  properties:
+    smartFolderId:
+      type: "string"
+      description: "The ID of the smart folder. If present, the categories defining the smart folder will be used to find matching contents "
+    smartFolderJSON:
+      type: "string"
+      description: "A serialized JSON array, describing the categories and contents in the smart folder, in the format specified for <code>smartFolderItem</code>. Only used when no smartFolderId is provided. "
+    smartFolderItem:
+      type: "object"
+      description: "The different categories and contents in the smart folder, encoded as JSON strings. They should be in the {categoryId(contentId): &quot;...&quot;, min: ..., max: ...} format. Only used when no smartFolderId and no smartFolderJSON are provided. "
+    useCache:
+      type: "boolean"
+      description: "Whether to return results from the smart folder cache or to extract the newest ratings. Only used when smartFolderId is specified. Smart folders cache is automatically updated every hour and on each smart folder update, so in general using it provides up-to-date results. "
+    metadataFilter:
+      type: "object"
+      description: "Used to filter results based on arbitrary metadata fields, e.g. metadaFilter.source=Wikipedia will only return results from Wikipedia "
+    contentSourceGroup:
+      type: "string"
+      description: "Allowed values: wikipedia, books and web. Specifies contents from which sources to be returned "
+    totalCount:
+      type: "number"
+      description: "<ul> <li>The total number of matches.</li> </ul> "
+  required:
+    - "totalCount"
+GetApiRatingSmartfoldercountindividual:
+  properties:
+    smartFolderId:
+      type: "string"
+      description: "The ID of the smart folder. If present, the categories and contents defining the smart folder will be used to find matching contents "
+    smartFolderJSON:
+      type: "string"
+      description: "A serialized JSON array, describing the categories and contents in the smart folder, in the format specified for <code>smartFolderItem</code>. Only used when no smartFolderId is provided. "
+    smartFolderItem:
+      type: "object"
+      description: "The different categories and contents in the smart folder, encoded as JSON strings. They should be in the {categoryId(contentId): &quot;...&quot;, min: ..., max: ...} format. Only used when no smartFolderId and no smartFolderJSON are provided. "
+    metadataFilter:
+      type: "object"
+      description: "Used to filter results based on arbitrary metadata fields, e.g. metadaFilter.source=Wikipedia will only return results from Wikipedia "
+    contentSourceGroup:
+      type: "string"
+      description: "Allowed values: wikipedia, books and web. Specifies contents from which sources to be returned "
+  required: []
+GetApiRatingSmartfoldercsv:
+  properties:
+    smartFolderId:
+      type: "string"
+      description: "The ID of the smart folder. If present, the categories defining the smart folder will be used to find matching contents "
+    smartFolderJSON:
+      type: "string"
+      description: "A serialized JSON array, describing the categories and contents in the smart folder, in the format specified for <code>smartFolderItem</code>. Only used when no smartFolderId is provided. "
+    smartFolderItem:
+      type: "object"
+      description: "The different categories and contents in the smart folder, encoded as JSON strings. They should be in the {categoryId(contentId): &quot;...&quot;, min: ..., max: ...} format. Only used when no smartFolderId and no smartFolderJSON are provided. "
+    from:
+      type: "number"
+      description: "The beginning of the requested range "
+    to:
+      type: "number"
+      description: "The end of the requested range "
+    useCache:
+      type: "boolean"
+      description: "Whether to return results from the smart folder cache or to extract the newest ratings. Only used when smartFolderId is specified. Smart folders cache is automatically updated every hour and on each smart folder update, so in general using it provides up-to-date results. "
+    metadataFilter:
+      type: "object"
+      description: "Used to filter results based on arbitrary metadata fields, e.g. metadaFilter.source=Wikipedia will only return results from Wikipedia "
+    contentSourceGroup:
+      type: "string"
+      description: "Allowed values: wikipedia, books and web. Specifies contents from which sources to be returned "
+    -:
+      type: "file"
+      description: "The .csv file containing the recommendations data. "
+  required:
+    - "-"
+PostApiRatingCategorytocontent:
+  properties:
+    contentIds:
+      type: "array"
+      description: ""
+      items:
+        type: "string"
+    categoryIds:
+      type: "array"
+      description: ""
+      items:
+        type: "string"
+  required:
+    - "contentIds"
+    - "categoryIds"
+PostApiRatingContentscategoryratingsmap:
+  properties:
+    contentIds:
+      type: "array"
+      description: "The target content IDs. "
+      items:
+        type: "string"
+    profileId:
+      type: "string"
+      description: "The id of the profile whose contents to be used for rating "
+    productionReady:
+      type: "boolean"
+      description: "Whether to include only production ready categories. "
+    minScore:
+      type: "number"
+      description: "The minimum score that the ratings should have. <i>The default value is defined in the system</i> "
+  required:
+    - "contentIds"
+    - "profileId"
+

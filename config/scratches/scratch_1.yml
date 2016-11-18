@@ -1,0 +1,194 @@
+/api/rating/categoryBest:
+
+
+-----
+
+/api/rating/contentBest:
+  delete:
+    tags:
+      - "Ratings"
+    consumes:
+      - "application/json"
+    produces:
+      - "application/json"
+    parameters:
+      - name: "contentId"
+        in: "query"
+        required: true
+        type: "string"
+        description: "<ul> <li>The ID of the content whose ratings should be removed.</li> </ul> "
+  post:
+    tags:
+      - "Ratings"
+    summary: "Returns the content-to-content ratings for a given content. The content should be specified by: <ul>     <li>its ID with the <code>contentId</code> parameter</li>     <li>its source and source ID with the <code>content</code> parameter     (<code>content.source</code> <i>and</i> <code>content.sourceId</code>)     </li> </ul>  Optionally, the best recommendations can be filtered using the <code>contentsToRate</code> list of objects. Each of these objects contains a specific criteria for matching contents by their: <ul>     <li>group of sources (<code>contentsToRate[i].sourceGroup</code>)</li>     <li>specific source(s) (<code>contentsToRate[i].source</code>)</li>     <li>specific source and source ID (<code>contentsToRate[i].source</code>     <i>and</i> <code>contentsToRate[i].sourceId</code>)     </li>     <li>any metadata field (e.g. <code>contentsToRate[i].country</code>)</li> </ul>  An optional feature enabled with the <code>priorityContents</code> parameter is putting a selection of contents at the top of the list for rating. This is done with a similar format as <code>contentsToRate</code>. If a rating operation is currently running, its task info (id, status [and error]) will be provided (it won&#39;t be initiated again) along with a list of the currently available partial list of ratings. Otherwise, a new rating operation will be triggered. If the <code>itemsToRate</code> option is not specified, all existing contents will be rated from scratch. If <code>itemsToRate</code> is specified, it needs to be a list of objects. Each object specifies a condition, and all contents matching any of these conditions will be rated. Currently, the following conditions are acceptable: <ul>     <li>Rate all contents from a source (<code>itemsToRate[i].source</code>)</li>     <li>Rate all contents from a source group (<code>itemsToRate[i].sourceGroup</code>)</li> </ul> Multiple objects of the same type, but with different values, can be specified. (see the examples). If a new operation is initiated, the ID of its task is given in the response, to ease checking whether the ratings are ready. Note that the check whether a training operation is necessary is pretty expensive and thus slower than the GET variant of this operation (which doesn&#39;t initiate trainings and doesn&#39;t need to do such checks). Full metadata information is returned for each recommended content, which incurs a performance penalty. If the additional information is not needed, you can turn this off by setting the <code>fullMetadata</code> flag to <code>false</code>. In this case, partial metadata will still be returned, including the <code>source</code> and <code>sourceId</code> of each recommended content. This endpoint accepts Content-Type <code>application/json</code> and <code>application/www-x-form-encoded</code>. <i>This endpoint supports <b>WebHook calls</b>. Pass <code>webhookId</code> <b>URI</b> to the request query string for notification on task finished.</i> <i>WebHook call is as follows</i>:</br>     <code>POST WebHookURI {taskId: &quot;task_id&quot;}</code>  on success </br>     <code>POST WebHookURI {error: &quot;Error message&quot;}</code> on error "
+    consumes:
+      - "application/json"
+    produces:
+      - "application/json"
+    parameters:
+      - in: "body"
+        name: "body"
+        description: "Returns the content-to-content ratings for a given content. The content should be specified by: <ul>     <li>its ID with the <code>contentId</code> parameter</li>     <li>its source and source ID with the <code>content</code> parameter     (<code>content.source</code> <i>and</i> <code>content.sourceId</code>)     </li> </ul>  Optionally, the best recommendations can be filtered using the <code>contentsToRate</code> list of objects. Each of these objects contains a specific criteria for matching contents by their: <ul>     <li>group of sources (<code>contentsToRate[i].sourceGroup</code>)</li>     <li>specific source(s) (<code>contentsToRate[i].source</code>)</li>     <li>specific source and source ID (<code>contentsToRate[i].source</code>     <i>and</i> <code>contentsToRate[i].sourceId</code>)     </li>     <li>any metadata field (e.g. <code>contentsToRate[i].country</code>)</li> </ul>  An optional feature enabled with the <code>priorityContents</code> parameter is putting a selection of contents at the top of the list for rating. This is done with a similar format as <code>contentsToRate</code>. If a rating operation is currently running, its task info (id, status [and error]) will be provided (it won&#39;t be initiated again) along with a list of the currently available partial list of ratings. Otherwise, a new rating operation will be triggered. If the <code>itemsToRate</code> option is not specified, all existing contents will be rated from scratch. If <code>itemsToRate</code> is specified, it needs to be a list of objects. Each object specifies a condition, and all contents matching any of these conditions will be rated. Currently, the following conditions are acceptable: <ul>     <li>Rate all contents from a source (<code>itemsToRate[i].source</code>)</li>     <li>Rate all contents from a source group (<code>itemsToRate[i].sourceGroup</code>)</li> </ul> Multiple objects of the same type, but with different values, can be specified. (see the examples). If a new operation is initiated, the ID of its task is given in the response, to ease checking whether the ratings are ready. Note that the check whether a training operation is necessary is pretty expensive and thus slower than the GET variant of this operation (which doesn&#39;t initiate trainings and doesn&#39;t need to do such checks). Full metadata information is returned for each recommended content, which incurs a performance penalty. If the additional information is not needed, you can turn this off by setting the <code>fullMetadata</code> flag to <code>false</code>. In this case, partial metadata will still be returned, including the <code>source</code> and <code>sourceId</code> of each recommended content. This endpoint accepts Content-Type <code>application/json</code> and <code>application/www-x-form-encoded</code>. <i>This endpoint supports <b>WebHook calls</b>. Pass <code>webhookId</code> <b>URI</b> to the request query string for notification on task finished.</i> <i>WebHook call is as follows</i>:</br>     <code>POST WebHookURI {taskId: &quot;task_id&quot;}</code>  on success </br>     <code>POST WebHookURI {error: &quot;Error message&quot;}</code> on error "
+        required: true
+        schema:
+          $ref: "#/definitions/PostApiRatingContentbest"
+    responses:
+      200:
+        description: "successful operation"
+        schema:
+          $ref: "#/definitions/PostApiRatingContentbest"
+
+
+   - in: formData
+     type: string
+     name: categoryId
+     description: The ID of the target category to return recommendations against.
+   - in: formData
+     type: string
+     name: source
+     description: Filter results by their source. Can be specified multiple times for filtering on multiple sources
+   - in: formData
+     type: number
+     name: minConfidence
+     description: A minimum confidence score for the returned contents.
+   - in: formData
+     type: number
+     name: maxConfidence
+     description: A max confidence score for the returned contents.
+
+contentBestContent:
+  type: object
+  description: "A criteria for matching the content. Must specify <code>source</code> + <code>sourceId</code>. Do not pass this parameter if the <code>contentId</code> parameter is set. "
+  properties:
+      source:
+        type: "string"
+        description: "The source of the content. Mandatory field for the <code>content</code> object. "
+      sourceId:
+        type: "string"
+        description: "The source ID of the content. Mandatory field for the <code>content</code> object. "
+
+rateContent:
+  type: object
+  properties:
+    source:
+      required: false
+      type: "string"
+      description: "The source of content that should be used for rating. "
+    sourceId:
+      required: false
+      type: "string"
+      description: "The source ID of content that should be used for rating. "
+    acquisitionDate:
+      required: false
+      type: "number"
+      description: "The minimum timestamp of the returned content. The value should be in seconds. "
+    sourceGroup:
+      required: false
+      type: "string"
+      description: "The source group to use. Will be expanded to several <code>source</code> criteria objects. Therefore, it&#39;s just a shortcut to specifying multiple criteria objects with different <code>source</code> fields. Can be <code>web</code>, <code>books</code> or <code>wikipedia</code>. "
+    some_field:
+      required: false
+      type: "string"
+      description: "By the <code>some_field</code> property of the content metadata (e.g. <code>some_field</code> can be <code>country</code>). "
+
+
+
+GetApiRatingContentbest:
+  properties:
+    ratings:
+      type: "array"
+      description: "The content-to-content ratings for the given content. Can be empty if there aren&#39;t any ratings in the database. "
+      items:
+        $ref: "#/definitions/rating"
+    task:
+      type: "string"
+      description: "The last task that has rated or is currently rating content against the target content. "
+      $ref: "#/definitions/task"
+  required:
+    - "ratings"
+    - "task"
+
+rating:
+  properties:
+    score:
+      type: "number"
+      description: "The score of the current rating. A value between 0 and 1. "
+    contentId:
+      type: "string"
+      description: "The ID of the content used for rating. "
+    metadata:
+      type: "string"
+      description: "The metadata for the content. "
+  required:
+    - "score"
+    - "contentId"
+    - "metadata"
+task:
+  properties:
+    taskId:
+      type: "string"
+      description: "The ID the task "
+    error:
+      type: "string"
+      description: "The error in case the task has status is &#39;failed&#39; "
+    status:
+      type: "string"
+      enum:
+        - new
+        - running
+        - waiting
+        - cancelled
+        - finished
+        - failed
+  required:
+    - "taskId"
+    - "status"
+
+
+in: formData
+type: array
+name: itemsToRate
+description: >
+             The contents for which the rating operation
+             will be triggered. Ratings for them will be stored after the task completes.
+             <i><b>Same filtering may be applied as in <code>contentsToRate</code></b></i>.
+items:
+  $ref: "#/definitions/rateContentFilter"
+
+
+in: formData
+type: array
+name: itemsToRate
+description: >
+             The contents for which the rating operation
+             will be triggered. Ratings for them will be stored after the task completes.
+             <i><b>Same filtering may be applied as in <code>contentsToRate</code></b></i>.
+items:
+  $ref: "#/definitions/rateContentFilter"
+
+
+
+
+in: formData
+type: boolean
+name: generateTopResultsOnly
+description: >
+             Whether to optimize the task to store
+             only the top few results. Only applies if a new task is initiated.
+in: formData
+type: number
+name: topResults
+default: 10
+description: >
+             The number of top results to store after the task
+             is completed. Should be a number between 0 and 20. Only applies if a new task
+             is initiated.
+items:
+  $ref: "#/definitions/contentBestContent"
+
+
+priorityContents
+itemsToRate
+topResults
+generateTopResultsOnly
+- includeRatingTask

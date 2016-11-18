@@ -1,52 +1,42 @@
 <application>
   <component name="FindRecents">
     <findStrings>
-      <find>SmartFoldersService.getAllSmartFolders</find>
-      <find>getCategoriesInfo</find>
-      <find>categories/info</find>
-      <find>config</find>
-      <find>regexp-clone</find>
-      <find>Spinner.hide</find>
-      <find>contents/delete</find>
-      <find>removeContents</find>
-      <find>removeSelectedContentsFromDatabase</find>
-      <find>update</find>
-      <find>tooltip</find>
-      <find>category-details</find>
-      <find>import</find>
-      <find>importArticle</find>
-      <find>addContent</find>
-      <find>on('ata'</find>
-      <find>on('data'</find>
-      <find>on('uploadComplete'</find>
-      <find>importA</find>
-      <find>on('error'</find>
-      <find>analyzeProfile</find>
-      <find>csv</find>
-      <find>updateCategory</find>
-      <find>infinite</find>
-      <find>loadMore</find>
-      <find>getCategoryRatingMapForContents</find>
-      <find>originalContents</find>
-      <find>getContentRatingsForContentInitiateTraining</find>
-      <find>deleteProfileCategory</find>
-      <find>jasmine-node</find>
+      <find>credsFrenomBody</find>
+      <find>mockg</find>
+      <find>../../</find>
+      <find>deleteSelectedCategories</find>
+      <find>modal-pop</find>
+      <find>INGESTED_BY_SOURCE</find>
+      <find>allof</find>
+      <find>selected</find>
+      <find>jkj:</find>
+      <find>dynamic</find>
+      <find>insert</find>
+      <find>callQueue</find>
+      <find>j</find>
+      <find>intellogoAPI.initiateDynamicCategoriesCleanu</find>
+      <find>jk</find>
+      <find>contentCategoryRatings</find>
+      <find>endpoint</find>
+      <find>operation.handle</find>
+      <find>Handlebars.</find>
+      <find>toHaveBeenCalledWith</find>
+      <find>invalidateSmart</find>
+      <find>jjkkj</find>
+      <find>kjkGjk</find>
+      <find>subscriber</find>
+      <find>subscribedEntity</find>
+      <find>clientSecret</find>
+      <find>DataDB(</find>
+      <find>INGEST_AND_TRAIN_TYPE</find>
+      <find>SmartFolderCacheInvalidator(</find>
+      <find>invalidateSmartFolderCache</find>
     </findStrings>
     <replaceStrings>
-      <replace>&lt;category-details '</replace>
-      <replace>sourceToMetadata</replace>
-      <replace>sourceIdToMetadata</replace>
-      <replace>titles</replace>
-      <replace>insertMissing</replace>
-      <replace>dataType</replace>
-      <replace>'</replace>
-      <replace>newCategory.scoreRange</replace>
-      <replace>selectedRating</replace>
       <replace>req.body.</replace>
       <replace>item</replace>
       <replace>items</replace>
       <replace>.items</replace>
-      <replace>,</replace>
       <replace>,</replace>
       <replace>smartFolderItem</replace>
       <replace>smartfolder.matadata</replace>
@@ -63,38 +53,48 @@
       <replace>GlobalConfig</replace>
       <replace>database-main</replace>
       <replace>ratings-retriever</replace>
+      <replace>contentIdsToAssign</replace>
+      <replace>contentIdsToUnassign</replace>
+      <replace>profile</replace>
+      <replace>profiles</replace>
+      <replace>Profiles</replace>
+      <replace>limit</replace>
+      <replace>\L$1</replace>
+      <replace>\L$1\E</replace>
+      <replace>../../../</replace>
+      <replace>entityId</replace>
     </replaceStrings>
     <dirStrings>
-      <dir>$USER_HOME$/workspace/Intellogo/server/lib/training/tasks</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/server/lib/training/workers</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/ingestion/scrapers/rss</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/admin/app/views/smart-folders</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/admin/app/scripts/controllers/associate</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/admin/app/scripts/controllers</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/admin/app/scripts/controllers/directives</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/admin/app/scripts/controllers/reading-profiles</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/server/model</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/admin/app/views/common</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/admin/app</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/server/model/data</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/admin/bower_components/bootstrap</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/admin</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/server/middleware</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/server/lib</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/admin/app/styles</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/admin/app/scripts/controllers/all</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/admin/app/scripts</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/admin/test</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/admin/app/scripts/controllers/directives/recommendations-list</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/server/node_modules/oauth2-server</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/server/node_modules/express</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/admin/src/admin/styles</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/server</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/server/node_modules</dir>
-      <dir>$USER_HOME$/workspace/Intellogo/admin/src/admin/scripts/controllers/directives/recommendations-list</dir>
       <dir>$USER_HOME$/workspace/Intellogo/server/node_modules/mongoose/lib</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/server/lib</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/server/lib/</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/ingestion/scrapers/epub</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/ingestion/node_modules/winston/lib/winston</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/sharedlib</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/server/node_modules/botkit/lib</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/ingestion/lib</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/intellogo-build</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/server/spec</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/admin/src/admin/scripts/directives</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/server/node_modules/swagger-ui/dist/lib</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/server/node_modules/swagger-ui/</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/server/</dir>
       <dir>$USER_HOME$/workspace/Intellogo/ingestion</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/server/lib/router</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/server/model/data</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/server/node_modules/moment</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/admin/src/admin</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/server/node_modules/oauth2-server</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/server/tests/unit</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/admin/src/admin/styles</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/admin/src/admin/scripts</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/server/tests/functional</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/server/node_modules/mongoose</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/server/node_modules/swagger-ui/src/main</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/server/node_modules/swagger-ui/src</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/server/node_modules/jasmine-node</dir>
       <dir>$USER_HOME$/workspace/Intellogo/server/router</dir>
+      <dir>$USER_HOME$/workspace/Intellogo/server</dir>
     </dirStrings>
   </component>
 </application>

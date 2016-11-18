@@ -2,9 +2,20 @@
   <component name="PasswordDatabase">
     <option name="PASSWORDS">
       <array>
-        <array />
-        <array />
+        <array>
+          <option value="9048dc5dda654ba690e17bf776695e88c05868f5f628c0cd9e3f34bb7b2581eb" />
+          <option value="a23caf315c4db11b8e94f50c7157b06f0d3b636e5bd0c496c542b0026e152528" />
+          <option value="e86d036dc89ed252627ba61b6023ec0b21cbd58fbbacdbe2b530c4a553903dd8" />
+        </array>
+        <array>
+          <option value="c92ec5ee9233ec1528a30281b64bb1e6" />
+          <option value="9f8c128ae7b1e9d5b5fd62a6c90edc80" />
+          <option value="8962f7731a0b30862b4da5c9d9830a2cc5f5fc1648242d888b16d1668c2dd1ad" />
+        </array>
       </array>
     </option>
+  </component>
+  <component name="SSHConnectionSettings">
+    <successfulAuthentication user="git@github.com" method="publickey" />
   </component>
 </application>

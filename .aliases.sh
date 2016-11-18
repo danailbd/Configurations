@@ -90,6 +90,7 @@ alias gcp="git cherry-pick $1"
 alias gcoc="gco stash@{0} -- src/rest/scripts/config.js"
 
 alias gb="git branch"
+alias gbdate="git branch --sort=-committerdate| head $1"
 alias gbD="git branch -D"
 alias gbcllm="git branch --merged | grep -v '\*\|master\|develop' | xargs -n 1 git branch -d" #clean local -> merged
 

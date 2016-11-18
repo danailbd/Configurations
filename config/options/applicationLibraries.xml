@@ -1,0 +1,63 @@
+<application>
+  <component name="libraryTable">
+    <library name="node-DefinitelyTyped" type="javaScript">
+      <properties>
+        <sourceFilesUrls>
+          <item url="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_github.com_DefinitelyTyped_DefinitelyTyped_raw_master_node_node.d.ts" />
+        </sourceFilesUrls>
+      </properties>
+      <CLASSES>
+        <root url="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/http_github.com_DefinitelyTyped_DefinitelyTyped_raw_master_node_node.d.ts" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Node.js Globals" type="javaScript">
+      <CLASSES />
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Python 2.7.11 (/usr/bin/python2.7) interpreter library">
+      <CLASSES>
+        <root url="file:///usr/lib/python2.7" />
+        <root url="file:///usr/lib/python2.7/plat-linux2" />
+        <root url="file:///usr/lib/python2.7/lib-tk" />
+        <root url="file:///usr/lib/python2.7/lib-dynload" />
+        <root url="file:///usr/lib/python2.7/site-packages" />
+        <root url="file:///usr/lib/python2.7/site-packages/gtk-2.0" />
+        <root url="file://$USER_HOME$/.IntelliJIdea2016.1/system/python_stubs/-1247972723" />
+        <root url="file://$APPLICATION_PLUGINS_DIR$/python/helpers/python-skeletons" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="file:///usr/lib/python2.7" />
+        <root url="file:///usr/lib/python2.7/plat-linux2" />
+        <root url="file:///usr/lib/python2.7/lib-tk" />
+        <root url="file:///usr/lib/python2.7/lib-dynload" />
+        <root url="file:///usr/lib/python2.7/site-packages" />
+        <root url="file:///usr/lib/python2.7/site-packages/gtk-2.0" />
+        <root url="file://$USER_HOME$/.IntelliJIdea2016.1/system/python_stubs/-1247972723" />
+        <root url="file://$APPLICATION_PLUGINS_DIR$/python/helpers/python-skeletons" />
+      </SOURCES>
+    </library>
+    <library name="Python 3.5.1 (/usr/bin/python3.5) interpreter library">
+      <CLASSES>
+        <root url="file:///usr/lib/python3.5" />
+        <root url="file:///usr/lib/python3.5/plat-linux" />
+        <root url="file:///usr/lib/python3.5/lib-dynload" />
+        <root url="file:///usr/lib/python3.5/site-packages" />
+        <root url="file://$USER_HOME$/.IntelliJIdea2016.1/system/python_stubs/-1247971764" />
+        <root url="file://$APPLICATION_PLUGINS_DIR$/python/helpers/python-skeletons" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="file:///usr/lib/python3.5" />
+        <root url="file:///usr/lib/python3.5/plat-linux" />
+        <root url="file:///usr/lib/python3.5/lib-dynload" />
+        <root url="file:///usr/lib/python3.5/site-packages" />
+        <root url="file://$USER_HOME$/.IntelliJIdea2016.1/system/python_stubs/-1247971764" />
+        <root url="file://$APPLICATION_PLUGINS_DIR$/python/helpers/python-skeletons" />
+      </SOURCES>
+    </library>
+  </component>
+</application>

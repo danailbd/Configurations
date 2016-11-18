@@ -1,14 +1,50 @@
 <application>
   <component name="WindowStateApplicationService">
-    <state x="-2" y="0" width="1924" height="1174" maximized="true" key="DiffContextDialog" />
+    <state x="1198" y="0" width="1284" height="1026" maximized="true" key="DiffContextDialog" />
     <state x="244" y="0" width="1553" height="1200" key="DiffContextDialog/0.0.1920.1200" />
+    <state x="-2" y="0" width="1922" height="1170" key="DiffContextDialog/0.0.1920.1200/1920.0.1280.1024" />
+    <state x="-2" y="0" width="1922" height="1170" key="DiffContextDialog/0.0.1920.1200/1920.0.1280.1024@0.0.1920.1200" />
     <state x="244" y="0" width="1553" height="1200" key="DiffContextDialog/0.0.1920.1200@0.0.1920.1200" />
     <state x="244" y="0" width="1553" height="1200" maximized="true" key="DiffContextDialog/0.0.3200.1200" />
     <state x="244" y="0" width="1553" height="1200" maximized="true" key="DiffContextDialog/0.0.3200.1200@0.0.3200.1200" />
-    <state x="-2" y="0" width="1924" height="1174" maximized="true" key="DiffContextDialog/1920.0.1280.1024/0.0.1920.1200" />
-    <state x="-2" y="0" width="1924" height="1174" maximized="true" key="DiffContextDialog/1920.0.1280.1024/0.0.1920.1200@0.0.1920.1200" />
-    <state x="95" y="90" width="1730" height="1015" key="dock-window-1" />
+    <state x="1198" y="0" width="1284" height="1026" maximized="true" key="DiffContextDialog/1200.0.1280.1024/0.0.1200.1920" />
+    <state x="1198" y="0" width="1284" height="1026" maximized="true" key="DiffContextDialog/1200.0.1280.1024/0.0.1200.1920@0.0.1200.1920" />
+    <state x="1200" y="462" width="1280" height="1024" maximized="true" key="DiffContextDialog/1200.462.1280.1024/0.0.1200.1920" />
+    <state x="1200" y="462" width="1280" height="1024" maximized="true" key="DiffContextDialog/1200.462.1280.1024/0.0.1200.1920@0.0.1200.1920" />
+    <state x="1198" y="462" width="1284" height="1026" maximized="true" key="DiffContextDialog/1200.489.1280.1024/0.0.1200.1920" />
+    <state x="1198" y="462" width="1284" height="1026" maximized="true" key="DiffContextDialog/1200.489.1280.1024/0.0.1200.1920@0.0.1200.1920" />
+    <state x="1920" y="0" width="1280" height="1024" maximized="true" key="DiffContextDialog/1920.0.1280.1024/0.0.1200.1920" />
+    <state x="1920" y="0" width="1280" height="1024" maximized="true" key="DiffContextDialog/1920.0.1280.1024/0.0.1200.1920@0.0.1200.1920" />
+    <state x="0" y="0" width="1920" height="1172" maximized="true" key="DiffContextDialog/1920.0.1280.1024/0.0.1920.1200" />
+    <state x="0" y="0" width="1920" height="1172" maximized="true" key="DiffContextDialog/1920.0.1280.1024/0.0.1920.1200@0.0.1920.1200" />
+    <state x="59" y="219" width="1526" height="932" key="VCS.FileHistoryDialog" />
+    <state x="59" y="219" width="1526" height="932" key="VCS.FileHistoryDialog/0.0.1920.1200/1920.0.1280.1024" />
+    <state x="59" y="219" width="1526" height="932" key="VCS.FileHistoryDialog/0.0.1920.1200/1920.0.1280.1024@0.0.1920.1200" />
+    <state x="59" y="219" width="1526" height="932" key="VCS.FileHistoryDialog/1920.0.1280.1024/0.0.1920.1200" />
+    <state x="59" y="219" width="1526" height="932" key="VCS.FileHistoryDialog/1920.0.1280.1024/0.0.1920.1200@0.0.1920.1200" />
+    <state x="98" y="74" width="1004" height="1748" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" />
+    <state x="98" y="74" width="1004" height="1748" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/1200.489.1280.1024/0.0.1200.1920" />
+    <state x="98" y="74" width="1004" height="1748" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/1200.489.1280.1024/0.0.1200.1920@0.0.1200.1920" />
+    <state x="98" y="74" width="1004" height="1748" key="com.intellij.history.integration.ui.views.FileHistoryDialog" />
+    <state x="98" y="74" width="1004" height="1748" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1200.489.1280.1024/0.0.1200.1920" />
+    <state x="98" y="74" width="1004" height="1748" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1200.489.1280.1024/0.0.1200.1920@0.0.1200.1920" />
+    <state x="98" y="74" width="1724" height="1028" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" />
+    <state x="98" y="74" width="1724" height="1028" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/1920.0.1280.1024/0.0.1920.1200" />
+    <state x="98" y="74" width="1724" height="1028" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/1920.0.1280.1024/0.0.1920.1200@0.0.1920.1200" />
+    <state x="1920" y="0" width="1284" height="1026" maximized="true" key="dock-window-1" />
     <state x="95" y="90" width="1730" height="1015" key="dock-window-1/0.0.1920.1200" />
+    <state x="1918" y="0" width="1284" height="1026" key="dock-window-1/0.0.1920.1200/1920.0.1280.1024" />
+    <state x="1918" y="0" width="1284" height="1026" key="dock-window-1/0.0.1920.1200/1920.0.1280.1024@0.0.1920.1200" />
     <state x="95" y="90" width="1730" height="1015" key="dock-window-1/0.0.1920.1200@0.0.1920.1200" />
+    <state x="1920" y="0" width="1284" height="1026" maximized="true" key="dock-window-1/1920.0.1280.1024/0.0.1200.1920" />
+    <state x="1920" y="0" width="1284" height="1026" maximized="true" key="dock-window-1/1920.0.1280.1024/0.0.1200.1920@0.0.1200.1920" />
+    <state x="1920" y="0" width="1284" height="1128" key="dock-window-1/1920.0.1280.1024/0.0.1920.1200" />
+    <state x="1920" y="0" width="1284" height="1128" key="dock-window-1/1920.0.1280.1024/0.0.1920.1200@0.0.1920.1200" />
+    <state x="1920" y="0" width="1284" height="1026" maximized="true" key="dock-window-2" />
+    <state x="1920" y="0" width="1284" height="1026" maximized="true" key="dock-window-2/0.0.1920.1200/1920.0.1280.1024" />
+    <state x="1920" y="0" width="1284" height="1026" maximized="true" key="dock-window-2/0.0.1920.1200/1920.0.1280.1024@0.0.1920.1200" />
+    <state x="1825" y="204" width="1284" height="1026" key="git4idea.ui.branch.GitCompareBranchesDialog" />
+    <state x="1825" y="204" width="1284" height="1026" key="git4idea.ui.branch.GitCompareBranchesDialog/1920.0.1280.1024/0.0.1920.1200" />
+    <state x="1825" y="204" width="1284" height="1026" key="git4idea.ui.branch.GitCompareBranchesDialog/1920.0.1280.1024/0.0.1920.1200@0.0.1920.1200" />
   </component>
 </application>
