@@ -90,7 +90,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconf="vim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+if [ -f ${HOME}/.bash_profile ]
+then
+    # Load USER Exports
+    source ${HOME}/.bash_profile
 
+fi
 if [ -f ${HOME}/.aliases.sh ]
 then
     source ${HOME}/.aliases.sh
@@ -99,12 +104,6 @@ if [ -f '.zsh_scripts' ]
 then
     source '.zsh_scripts'
 fi
-
-# user exports 
-export JAVA_HOME="/usr/lib/jvm/java-8-jdk"
-export GEM_HOME="/home/danailbd/.gem/ruby/2.2.0/bin"
-export MONGO_HOME="/home/danailbd/Programs/mongodb/mongodb-linux-i686-3.2.3/bin"
-export PATH=$PATH:$JAVA_HOME:$GEM_HOME:$MONGO_HOME
 
 eval $(ssh-agent -s)
 ssh-add ~/.ssh/github_w
