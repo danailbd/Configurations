@@ -41,6 +41,10 @@ fi
 #  ln -sfn ${dir}/.config/termite ${HOME}/.config/termite
 #fi
 
+if ask "Install symlink for .bashrc?" Y; then
+  ln -sfn ${dir}/.bashrc ${HOME}/.bashrc
+fi
+
 if ask "Install symlink for .bash_profile?" Y; then
   ln -sfn ${dir}/.bash_profile ${HOME}/.bash_profile
 fi

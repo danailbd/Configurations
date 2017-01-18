@@ -76,8 +76,6 @@ Plugin 'einars/js-beautify'
 
 call vundle#end()
 
-filetype plugin indent on
-
 " User defined config
  "
 
@@ -103,16 +101,17 @@ syntax on
 set nospell
 
 
+filetype plugin indent on
 set tabstop=4
-set softtabstop=4
+set softtabstop=0
 set shiftwidth=4
 set expandtab
 
 set cursorline
 " set cursorcolumn
 " " Set automatic indentation
-set autoindent
-set smartindent
+" set autoindent
+" set smartindent
 " Show matching [] and {}
 set showmatch
 
@@ -310,6 +309,8 @@ set foldlevel=99
 
 " SOME "
 let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_browser='Google Chrome'
+let vim_markdown_preview_github=1
 
 " PYTHON "
 let g:PyFlakeOnWrite = 1

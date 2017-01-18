@@ -90,7 +90,7 @@ URxvt.keysym.C-S-Down: font-size:decglobal
 
 URxvt.keysym.F11:          perl:fullscreen:switch
 
-URxvt.url-launcher:        /usr/bin/chromium
+URxvt.url-launcher:        /usr/bin/google-chrome-stable
 URxvt.keysym.M-Delete:     perl:matcher:list
 URxvt.colorUL:             #7780a1
 
@@ -100,8 +100,8 @@ URxvt.keysym.M-j: perl:tabbedex:next_tab
 URxvt.keysym.M-k: perl:tabbedex:prev_tab
 
 ! keyboard-select
-URxvt.keysym.M-j: perl:keyboard-select:activate
-URxvt.keysym.M-r: perl:keyboard-select:search
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
 
 ! Tabbedex features
 URxvt.tabbed.new-button:       no

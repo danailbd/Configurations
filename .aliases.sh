@@ -13,10 +13,19 @@ runNtimes () {
     echo Errors: $errs
 }
 
+gitFuzzyAdd () {
+    pattern=$1
+    folder=$2
+    fuzzyPath='**/*$1*'
+    git add --update $(test $folder && $folder/$path || $fuzzyPath)
+}
+
 # kill by grep
 pgkl () { 
     ps aux| grep "$1" | tr -s ' '| cut -f 2 -d ' '| xargs -I '{}' kill -9 {}
 }
+
+alias clrcache="su -c \"sync; echo 3 >'/proc/sys/vm/drop_caches'\"" # && swapoff -a && swapon -a && printf '\n%s\n' 'Ram-cache and Swap Cleared'\" root"
 
 # TEMP
 local_config="$HOME/.aliases_local.sh"
@@ -26,11 +35,13 @@ then
     source $local_config
 fi
 
-alias ipy="ipython3"
-alias py="python3"
+alias ipy="ipython2"
+alias py="python2"
 
 SCRIPT=`realpath $0`
 alias vsnip="cd ~/.vim/bundle/vim-snippets/UltiSnips/; vim"
+
+alias alse="cat $SCRIPT| grep $1"
 
 alias chkals="pygmentize -g $SCRIPT|grep "
 alias s="sudo"
@@ -69,6 +80,7 @@ alias gcm="git commit -m "$1""
 alias gaA="git add -A ."
 alias gaa="git add $1"
 alias ga="git add -u $1" #only update
+alias gaf="gitFuzzyAdd"
 alias gp="git pull"
 alias gpr="git pull --rebase"
 alias gpu="git push"
@@ -76,8 +88,10 @@ alias gpur='`gpu 2>&1 |tail -n2`' #some magic
 alias gpo="git push origin $1"
 alias gca="git commit --amend"
 alias gdp="git diff master@{1} master"
+alias gau="git update-index --assume-unchanged {1}" # useful for changing configs locally
 
 alias gl="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias glp="gl -p"
 alias glm="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit origin/master..HEAD"
 alias glp="gl -p" # show diffs
 alias glg1="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
@@ -95,7 +109,9 @@ alias gbD="git branch -D"
 alias gbcllm="git branch --merged | grep -v '\*\|master\|develop' | xargs -n 1 git branch -d" #clean local -> merged
 
 alias gco="git checkout"
+alias gcot="git checkout --track"
 alias gcob="git checkout -b"
+alias gr="git reset"
 alias grs="git reset --soft"
 alias grsp="git reset --soft HEAD^"
 alias grh="git reset --hard"
@@ -134,6 +150,15 @@ alias l="ls -o -hX --group-directories-first"
 alias la="ls -o -AhX --group-directories-first"
 alias j="jump"
 alias v='vim'
+
+# Rclone
+## http://linoxide.com/file-system/configure-rclone-linux-sync-cloud/
+alias rcls='rclone sync'
+alias rclc='rclone copy' # source:path dest:path
+alias rclls='rclone ls $1' # e.g. gdrive:
+alias rcllss='rclone lsl $1' # with sizes e.g. gdrive:
+alias rcllsd='rclone lsd $1' # with timestamps e.g. gdrive:
+    # purge(del non empty dir), mkdir, rmdir, check 
 
 # Config
 alias termiteconf="vim ~/.config/termite/config"
