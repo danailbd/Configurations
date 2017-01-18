@@ -31,6 +31,8 @@ dir=`pwd`
 if ask "Install symlink for .zshrc?" Y; then
   ln -sf ${dir}/.zshrc ${HOME}/.zshrc
   ln -sf ${dir}/.aliases.sh ${HOME}/.aliases.sh
+  # install oh-my-zsh
+  sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 fi
 
 #if ask "Install symlink for .npmrc?" Y; then
