@@ -10,3 +10,11 @@ export MONGO_HOME="/home/danailbd/Programs/mongodb/mongodb-linux-i686-3.2.3/bin"
 export PATH=$PATH:$JAVA_HOME:$GEM_HOME:$MONGO_HOME:$PROGRAMS_HOME:$INTELLIJ_HOME:$MONGOCHEF_HOME
 
 
+if [ -f ${HOME}/.aliases.sh ]
+then
+    source ${HOME}/.aliases.sh
+fi
+if [ -f '.zsh_scripts' ]
+then
+    source '.zsh_scripts'
+fi

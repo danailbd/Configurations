@@ -170,7 +170,7 @@ alias xres="vim ~/.Xresources && xrdb ~/.Xresources"
 alias vrc="vim ~/.vimrc"
 alias als="vim $SCRIPT && source ~/.zshrc"
 
-alias update.="cd $CONFIG_HOME && gaa -u && gcm 'Update dotfiles' && gpo master"
+alias update.="cd $CONFIG_HOME && git add -u && gcm 'Update dotfiles' && gpo master"
 
 # Man
 #alias h='tldr'

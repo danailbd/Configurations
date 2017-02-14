@@ -96,14 +96,6 @@ then
     source ${HOME}/.bash_profile
 
 fi
-if [ -f ${HOME}/.aliases.sh ]
-then
-    source ${HOME}/.aliases.sh
-fi
-if [ -f '.zsh_scripts' ]
-then
-    source '.zsh_scripts'
-fi
 
 eval $(ssh-agent -s)
 ssh-add ~/.ssh/github_w
