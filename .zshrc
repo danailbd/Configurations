@@ -56,7 +56,7 @@ plugins=(git git-prompt zsh-completions archlinux colored-man tmux k zsh-syntax-
 
 DEFAULT_USER=danailbd
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/dandimitrov/.gem/ruby/2.4.0/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 export IDEA_HOME="/home/danailbd/Programs/idea-IU/bin"

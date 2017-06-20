@@ -2,6 +2,20 @@
 
 set -e
 
+is_command_installed() {
+    com=$1
+    command -v $1 >/dev/null 2>&1 || { echo >&2 "I require $1 but it's not installed.  Aborting."; exit 1; }
+}
+
+REQUIRED_COMMANDS=('wget' 'git')
+
+for com in ${REQUIRED_COMMANDS[@]}; do
+    is_command_installed $com
+    if [ $? -ne 0 ]; then
+        exit 1
+    fi
+done
+
 # Source: https://gist.github.com/davejamesmiller/1965569
 ask() {
   while true; do
@@ -29,10 +43,11 @@ ask() {
 dir=`pwd`
 
 if ask "Install symlink for .zshrc?" Y; then
-  ln -sf ${dir}/.zshrc ${HOME}/.zshrc
-  ln -sf ${dir}/.aliases.sh ${HOME}/.aliases.sh
   # install oh-my-zsh
   sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
+  ln -sf ${dir}/.zshrc ${HOME}/.zshrc
+  ln -sf ${dir}/.aliases.sh ${HOME}/.aliases.sh
 fi
 
 #if ask "Install symlink for .npmrc?" Y; then
@@ -57,6 +72,10 @@ fi
 
 if ask "Install symlink for .vimrc?" Y; then
   ln -sfn ${dir}/.vimrc ${HOME}/.vimrc
+
+  if [ ! -d ~/.vim/bundle ] && ask "Install Vundle for vim?" Y; then
+      git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  fi
 fi
 
 #if ask "Install symlink for .config/base16-shell?" Y; then

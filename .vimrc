@@ -46,7 +46,7 @@ Plugin 'sickill/vim-monokai'
 " Plugin 'mikefarmer/pastelsondark-vim'
 
 "Syntax"
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'ternjs/tern_for_vim'
 " Plugin 'davidhalter/jedi-vim' " python only
 " Plugin 'scrooloose/syntastic'
@@ -110,8 +110,8 @@ set expandtab
 set cursorline
 " set cursorcolumn
 " " Set automatic indentation
-" set autoindent
-" set smartindent
+set autoindent
+set smartindent
 " Show matching [] and {}
 set showmatch
 

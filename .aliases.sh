@@ -171,6 +171,9 @@ alias vrc="vim ~/.vimrc"
 alias als="vim $SCRIPT && source ~/.zshrc"
 
 alias update.="cd $CONFIG_HOME && git add -u && gcm 'Update dotfiles' && gpo master"
+# Notes
+alias cdNotes="cd ~/workspace/notes"
+alias updateNotes="git add -u && gcm 'Update Notes' && git push"
 
 # Man
 #alias h='tldr'
