@@ -46,6 +46,7 @@ if ask "Install symlink for .zshrc?" Y; then
   # install oh-my-zsh
   sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
+  git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
   ln -sf ${dir}/.zshrc ${HOME}/.zshrc
   ln -sf ${dir}/.aliases.sh ${HOME}/.aliases.sh
 fi

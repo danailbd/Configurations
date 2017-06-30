@@ -50,7 +50,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git git-prompt zsh-completions archlinux colored-man tmux k zsh-syntax-highlighting git-flow-completion)
+plugins=(git git-prompt zsh-autosuggestions zsh-completions archlinux colored-man tmux k zsh-syntax-highlighting git-flow-completion)
 
 # User configuration
 
