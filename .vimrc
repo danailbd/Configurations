@@ -11,6 +11,9 @@ Plug 'tpope/vim-commentary'
 Plug 'mileszs/ack.vim'
 Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plug 'tpope/vim-surround'
+Plug 'junegunn/vim-easy-align'
+
+Plug 'jiangmiao/auto-pairs'
 
 " Track the engine.
 Plug 'SirVer/ultisnips'
@@ -34,7 +37,6 @@ Plug 'hdima/python-syntax' "better Python syntax
 Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'Raimondi/delimitMate'
 "Plug 'Valloric/YouCompleteMe'
 "Plug 'marijnh/tern_for_vim'
 
@@ -58,7 +60,9 @@ let g:ale_linters = {
 \}
 let g:ale_fixers = {
 \   'javascript': ['prettier-eslint'],
+\   'cpp': ['clang-format']
 \}
+let g:ale_c_clangformat_options = "-style=webkit"
 let g:ale_sign_error = '✖'
 " ✒ ✓ ✔ ✕ ✖ ✗ ✘ ✙ ✚ ✛ ✜ ✝ ✞ ✟
 " ✠ ✡ ✢ ✣ ✤ ✥ ✦ ✧ ✨ ✩ ✪ ✫ ✬ ✭ ✮ ✯ ✰ ✱ ✲ ✳ ✴ ✵ ✶ ✷ ✸ ✹ ✺ ✻ ✼ ✽ ✾ ✿ 
@@ -73,6 +77,13 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+" ACK
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+
 
 " Custom configurations
 set relativenumber 
@@ -98,13 +109,18 @@ set foldlevel=99
 set guioptions=*
 set guifont=DejaVu\ Sans\ Mono\ 16
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                 REMAPPINGS                                 "
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " split navigations
 nnoremap <S-J> <C-W><C-J>
 nnoremap <S-K> <C-W><C-K>
 nnoremap <S-L> <C-W><C-L>
 nnoremap <S-H> <C-W><C-H>
 
-nnoremap % v%
+vmap ea :EasyAlign<CR>:
 
 nmap oo <Esc>k " insert new line under without leaving normal mode
 nmap OO  <Esc>j " insert new line above  without leaving normal mode
@@ -147,7 +163,7 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 """""""""""""
 "  AUTOCMD  "
 """""""""""""
-autocmd VimEnter * cd $HOME/workspace/psp/gpii-app
+autocmd VimEnter * cd $HOME/workspace/
 autocmd BufWrite * lw 1
 
 

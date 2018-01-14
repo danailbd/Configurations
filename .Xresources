@@ -33,10 +33,10 @@ urxvt*cursorColor: #DCDCCC
 
 Xcursor.theme: DMZ-White
 
-URxvt.font:                xft:Source Code Pro:pixelsize=22
-URxvt.boldFont:            xft:Source Code Pro:pixelsize=22:bold
-URxvt.italicFont:          xft:Source Code Pro:pixelsize=22:italic
-URxvt.boldItalicFont:      xft:Source Code Pro:pixelsize=22:bold:italic
+URxvt.font:                xft:Source Code Pro:pixelsize=24
+URxvt.boldFont:            xft:Source Code Pro:pixelsize=24:bold
+URxvt.italicFont:          xft:Source Code Pro:pixelsize=24:italic
+URxvt.boldItalicFont:      xft:Source Code Pro:pixelsize=24:bold:italic
 URxvt.letterSpace:         -1
 
 Xft.antialias: 1
