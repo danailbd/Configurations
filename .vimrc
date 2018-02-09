@@ -11,6 +11,13 @@ Plug 'tpope/vim-commentary'
 Plug 'mileszs/ack.vim'
 Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plug 'tpope/vim-surround'
+Plug 'junegunn/vim-easy-align'
+Plug 'embear/vim-localvimrc'
+Plug 'jiangmiao/auto-pairs'
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-fugitive' "used to show branch in airline
 
 " Track the engine.
 Plug 'SirVer/ultisnips'
@@ -18,6 +25,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Syntax
+Plug 'Chiel92/vim-autoformat'
 Plug 'w0rp/ale'
 Plug 'mustache/vim-mustache-handlebars'
 
@@ -34,7 +42,7 @@ Plug 'hdima/python-syntax' "better Python syntax
 Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'Raimondi/delimitMate'
+Plug 'heavenshell/vim-jsdoc'
 "Plug 'Valloric/YouCompleteMe'
 "Plug 'marijnh/tern_for_vim'
 
@@ -51,6 +59,7 @@ set wildignore+=*/tmp/*,*/node_modules/*,*/bower_components/*,*/dist/*,*.so,*.sw
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
 let g:ctrlp_custom_ignore = 'node_modules\|bower_components\|.git|.pyc'
+let g:ctrlp_types = ['mru', 'fil']
 
 "" 'w0rp/ale' config
 let g:ale_linters = {
@@ -74,12 +83,51 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+" vim-localvimrc
+let g:localvimrc_ask='0'
+let g:localvimrc_sandbox='0'
+
+
+"" Airline
+let g:airline#extensions#tabline#enabled = 1
+let airline#extensions#tabline#current_first = 1
+let g:airline_theme='bubblegum'
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#hunks#enabled = 0
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#tabline#close_symbol = '×'
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+let g:airline_left_sep = ''
+let g:airline_symbols.branch = ''
+
+" or copy paste the following into your vimrc for shortform text
+let g:airline_mode_map = {
+            \ '__' : '-',
+            \ 'n'  : 'N',
+            \ 'i'  : 'I',
+            \ 'R'  : 'R',
+            \ 'c'  : 'C',
+            \ 'v'  : 'V',
+            \ 'V'  : 'V',
+            \ '' : 'V',
+            \ 's'  : 'S',
+            \ 'S'  : 'S',
+            \ '' : 'S',
+            \ }
+
+"
 " Custom configurations
+"
 set relativenumber 
 set number 
 set colorcolumn=120
 
 set cursorline 
+set cursorcolumn
 set hlsearch 
 set ic
 set smartcase 
@@ -94,9 +142,8 @@ let mapleader=" " " map <Leader> to <Space>
 set foldmethod=indent
 set foldlevel=99
 
-" GUI configuration
-set guioptions=*
-set guifont=DejaVu\ Sans\ Mono\ 16
+" enable local vimrc config
+set exrc
 
 " split navigations
 nnoremap <S-J> <C-W><C-J>
@@ -104,7 +151,8 @@ nnoremap <S-K> <C-W><C-K>
 nnoremap <S-L> <C-W><C-L>
 nnoremap <S-H> <C-W><C-H>
 
-nnoremap % v%
+" Autoformat
+noremap - :Autoformat<CR>
 
 nmap oo <Esc>k " insert new line under without leaving normal mode
 nmap OO  <Esc>j " insert new line above  without leaving normal mode
@@ -129,6 +177,13 @@ set t_Co=256
 syntax on
 
 colorscheme zenburn
+
+" GUI configuration
+if has("gui_running")
+    colorscheme nova
+    set guioptions=*
+    set guifont=DejaVu\ Sans\ Mono\ 16
+endif
 
 " YouCompleteMe
 "" let g:ycm_autoclose_preview_window_after_completion=1
