@@ -129,6 +129,7 @@ set colorcolumn=120
 set cursorline 
 set cursorcolumn
 set hlsearch 
+set incsearch 
 set ic
 set smartcase 
 
@@ -145,6 +146,11 @@ set foldlevel=99
 " enable local vimrc config
 set exrc
 
+
+""""""""""""""
+"  Mappings  "
+""""""""""""""
+"
 " split navigations
 nnoremap <S-J> <C-W><C-J>
 nnoremap <S-K> <C-W><C-K>
@@ -160,6 +166,12 @@ nmap nf  :NERDTreeFind<CR>
 nmap mf  :NERDTreeToggle<CR>
 nmap ff  :Ack<Space>
 inoremap jk <Esc>
+
+" Commentary
+nmap <leader>c <Plug>Commentary
+xmap <leader>c <Plug>Commentary
+omap <leader>c <Plug>Commentary
+nmap <leader>cc <Plug>CommentaryLine
 
 
 " set keymap=bulgarian-phonetic
@@ -202,8 +214,8 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 """""""""""""
 "  AUTOCMD  "
 """""""""""""
-autocmd VimEnter * cd $HOME/workspace/psp/gpii-app
-autocmd BufWrite * lw 1
+" autocmd VimEnter * cd $HOME/workspace/psp/gpii-app
+" autocmd BufWrite * lw 1 " show messages (errors or warnings)
 
 
 " These are the tweaks I apply to YCM's config, you don't need them but they
