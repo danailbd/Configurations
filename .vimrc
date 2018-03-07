@@ -14,6 +14,7 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/vim-easy-align'
 Plug 'embear/vim-localvimrc'
 Plug 'jiangmiao/auto-pairs'
+Plug 'ervandew/supertab'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -173,6 +174,8 @@ xmap <leader>c <Plug>Commentary
 omap <leader>c <Plug>Commentary
 nmap <leader>cc <Plug>CommentaryLine
 
+" CTRL-P
+nmap <F6> :ClearAllCtrlPCaches<CR>
 
 " set keymap=bulgarian-phonetic
 imap <C-c> <CR><Esc>O
@@ -214,7 +217,9 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 """""""""""""
 "  AUTOCMD  "
 """""""""""""
-" autocmd VimEnter * cd $HOME/workspace/psp/gpii-app
+if isdirectory($HOME . "/workspace/psp/gpii-app")
+    autocmd VimEnter * cd $HOME/workspace/psp/gpii-app
+endif
 " autocmd BufWrite * lw 1 " show messages (errors or warnings)
 
 
