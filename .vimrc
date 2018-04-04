@@ -33,6 +33,7 @@ Plug 'mustache/vim-mustache-handlebars'
 " Color Schemes
 Plug 'trevordmiller/nova-vim'
 Plug 'jnurmine/Zenburn'
+Plug 'rafi/awesome-vim-colorschemes'
 
 " Python Plugins
 Plug 'nvie/vim-flake8'
@@ -44,7 +45,7 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'heavenshell/vim-jsdoc'
-"Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 "Plug 'marijnh/tern_for_vim'
 
 call plug#end()            " required
@@ -64,20 +65,20 @@ let g:ctrlp_types = ['mru', 'fil']
 
 "" 'w0rp/ale' config
 let g:ale_linters = {
-\   'javascript': ['eslint'],
-\}
+            \   'javascript': ['eslint'],
+            \}
 let g:ale_fixers = {
-\   'javascript': ['prettier-eslint'],
-\}
+            \   'javascript': ['prettier-eslint'],
+            \}
 let g:ale_sign_error = '✖'
 " ✒ ✓ ✔ ✕ ✖ ✗ ✘ ✙ ✚ ✛ ✜ ✝ ✞ ✟
-" ✠ ✡ ✢ ✣ ✤ ✥ ✦ ✧ ✨ ✩ ✪ ✫ ✬ ✭ ✮ ✯ ✰ ✱ ✲ ✳ ✴ ✵ ✶ ✷ ✸ ✹ ✺ ✻ ✼ ✽ ✾ ✿ 
+" ✠ ✡ ✢ ✣ ✤ ✥ ✦ ✧ ✨ ✩ ✪ ✫ ✬ ✭ ✮ ✯ ✰ ✱ ✲ ✳ ✴ ✵ ✶ ✷ ✸ ✹ ✺ ✻ ✼ ✽ ✾ ✿
 let g:ale_sign_warning = '⚡'
 
 
-"" UltiSnips 
+"" UltiSnips
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<C-e>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
@@ -123,16 +124,16 @@ let g:airline_mode_map = {
 "
 " Custom configurations
 "
-set relativenumber 
-set number 
+set relativenumber
+set number
 set colorcolumn=120
 
-set cursorline 
+set cursorline
 set cursorcolumn
-set hlsearch 
-set incsearch 
+set hlsearch
+set incsearch
 set ic
-set smartcase 
+set smartcase
 
 set splitbelow
 set splitright
@@ -143,6 +144,8 @@ let mapleader=" " " map <Leader> to <Space>
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
+
+set spell
 
 " enable local vimrc config
 set exrc
@@ -174,7 +177,16 @@ xmap <leader>c <Plug>Commentary
 omap <leader>c <Plug>Commentary
 nmap <leader>cc <Plug>CommentaryLine
 
-" CTRL-P
+""" Clipboard
+"
+vnoremap <C-S-X> "+x
+
+vnoremap <C-S-c> "+y
+
+inoremap <C-S-v> <ESC>"+pa
+
+
+""" CTRL-P
 nmap <F6> :ClearAllCtrlPCaches<CR>
 
 " set keymap=bulgarian-phonetic
@@ -195,14 +207,16 @@ colorscheme zenburn
 
 " GUI configuration
 if has("gui_running")
-    colorscheme nova
+    let g:seoul256_background = 237
+    colorscheme seoul256
     set guioptions=*
     set guifont=DejaVu\ Sans\ Mono\ 16
 endif
 
 " YouCompleteMe
-"" let g:ycm_autoclose_preview_window_after_completion=1
-"" map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_autoclose_preview_window_after_completion=1
+""map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:ycm_show_diagnostics_ui = 0
 
 " NERDTree
 "
