@@ -2,23 +2,29 @@
 set runtimepath+=~/.vim/bundle/YouCompleteMe
 call plug#begin('~/.vim/plugged')
 
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin' " show modified files in NERDTree
-Plug 'jistr/vim-nerdtree-tabs'
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-commentary'
-Plug 'mileszs/ack.vim'
-Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plug 'tpope/vim-surround'
-Plug 'junegunn/vim-easy-align'
 Plug 'embear/vim-localvimrc'
-Plug 'jiangmiao/auto-pairs'
-Plug 'ervandew/supertab'
 
+" TOOLS
+Plug 'airblade/vim-gitgutter'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ervandew/supertab'
+Plug 'jiangmiao/auto-pairs'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'junegunn/vim-easy-align'
+Plug 'mileszs/ack.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+
+Plug 'vim-scripts/loremipsum'
+
+" VISUALS
+Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plug 'Xuyuanp/nerdtree-git-plugin' " show modified files in NERDTree
+Plug 'Yggdroot/indentLine'
+Plug 'tpope/vim-fugitive' "used to show branch in airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-fugitive' "used to show branch in airline
 
 " Track the engine.
 Plug 'SirVer/ultisnips'
@@ -224,6 +230,11 @@ let g:ycm_show_diagnostics_ui = 0
 "" endif
 let g:nerdtree_tabs_open_on_gui_startup = 0
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+
+
+
+" IndentLine
+let g:indentLine_char = '┆'
 
 
 " JavaScript congifugration
