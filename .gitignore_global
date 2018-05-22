@@ -1,0 +1,11 @@
+.*
+*.swp
+
+*.log
+*.diff
+
+*.wav
+
+UltiSnips
+
+npm-debug.log*

@@ -94,8 +94,15 @@ if [ -f ${HOME}/.bash_profile ]
 then
     # Load USER Exports
     source ${HOME}/.bash_profile
-
 fi
+
+if [ -f ${HOME}/.inputrc ]
+then
+    # Load USER Exports
+    source ${HOME}/.inputrc
+fi
+
+
 
 eval $(ssh-agent -s)
 ssh-add ~/.ssh/github_w
